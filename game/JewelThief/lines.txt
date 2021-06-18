@@ -1,0 +1,26 @@
+You see the door to a house and notice a strange rock
+The door is locked
+You find a front door key under the rock and put it in your inventory
+You unlock the door and enter
+You see a door to the left, a door straight ahead, a clock, and stairs
+The grandfather clock shows the current time
+You see a refrigerator, an oven, and a sink
+You open the refrigerator and find a raw steak, it's now in your inventory
+You don't have anything to cook
+Do you want to cook and eat the steak.. yes or no?
+You cook and eat the steak
+The refrigerator is empty
+You washed the dishes for...
+You see a lion on the couch and a door to another room
+The lion mauls you
+You feed the lion and he leaves
+You see an empty living room and a doorway
+You see a landryroom with washer and dryer
+You check dryer and find a jewelery box key at the bottom of the dryer, you put it in your inventory
+You see a bed and a jewelry box
+You use the jewelry box key on the jewelry box and collect all of the jewels in your inventory.. get out of here...
+The jewelry box is locked
+You make it outside and run into the dark with the jewels
+You check the washer and find nothing
+You are not tired.. just a bed..
+...
