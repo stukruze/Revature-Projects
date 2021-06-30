@@ -1,0 +1,6 @@
+2021-06-25 16:06:20 DEBUG LoggingExamples:13 - this statement should be useful for debugging the application
+2021-06-25 16:06:20 INFO  LoggingExamples:14 - informational message use this level
+2021-06-25 16:06:20 WARN  LoggingExamples:15 - something bad potentially could happen
+2021-06-25 16:06:20 ERROR LoggingExamples:16 - something went wrong
+2021-06-25 16:06:20 FATAL LoggingExamples:17 - program died
+2021-06-25 16:06:20 INFO  LoggingExamples:26 - Worked as expected
