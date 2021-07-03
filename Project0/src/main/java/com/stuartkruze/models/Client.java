@@ -1,4 +1,4 @@
-package com.stuartkruze.clients;
+package com.stuartkruze.models;
 
 public class Client {
 
