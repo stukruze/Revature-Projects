@@ -18,7 +18,7 @@ public class RepoTest {
 		
 		System.out.println(cr.getClient(1));
 		
-		Client c = new Client(2, 1, "Arme", "Kruze", "236 Warren Street", "", "Newark", "New Jersey", 07103);
+		Client c = new Client(2, 1, "Arme", "Kruze", "236 Warren Street", "", "Newark", "New Jersey", "07103");
 		
 		c = cr.addClient(c);
 		System.out.println("====ADD CLIENT====");

@@ -11,14 +11,14 @@ public class Client {
 	private String address2;
 	private String city;
 	private String state;
-	private int zip;
+	private String zip;
 	
 	public Client() {
 		super();
 	}
 
 	public Client(int id, int accountId, String firstName, String lastName, String address1, String address2,
-			String city, String state, int zip) {
+			String city, String state, String zip) {
 		super();
 		this.id = id;
 		this.accountId = accountId;
@@ -32,7 +32,7 @@ public class Client {
 	}
 
 	public Client(int accountId, String firstName, String lastName, String address1, String address2, String city,
-			String state, int zip) {
+			String state, String zip) {
 		super();
 		this.accountId = accountId;
 		this.firstName = firstName;
@@ -108,11 +108,11 @@ public class Client {
 		this.state = state;
 	}
 
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
