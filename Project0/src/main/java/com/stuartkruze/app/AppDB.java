@@ -47,7 +47,6 @@ public class AppDB {
 		
 		app.delete("/clients/:id", cc.deleteClient);
 		
-		//app.patch("/clients/:id", cc.movieTransaction);
 		
 		
 		app.get("/accounts", ac.getAllAccounts);
@@ -59,7 +58,31 @@ public class AppDB {
 		
 		app.delete("/accounts/:id", ac.deleteAccount);
 		
-		//app.patch("/clients/:id", cc.movieTransaction);
+		app.patch("/accounts/:id", ac.changeType);
+		
+		
+		app.get("/accounts/checking", ac.getAllCAccounts);
+		
+		app.get("/accounts/checking:id", ac.getAccountById);
+		
+		app.post("/accounts/checking", ac.addCAccount);
+		
+		app.put("/accounts/checking:id", ac.updateAccount);
+		
+		app.delete("/accounts/checking:id", ac.deleteAccount);
+		
+		app.patch("/accounts/checking:id", ac.changeType);
+		
+
+		app.get("/accounts/savings", ac.getAllSAccounts);
+		
+		app.post("/accounts/savings", ac.addSAccount);
+		
+		app.put("/accounts/savings:id", ac.updateAccount);
+		
+		app.delete("/accounts/savings:id", ac.deleteAccount);
+		
+		app.patch("/accounts/savings:id", ac.changeType);
 		
 	}
 	

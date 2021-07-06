@@ -69,5 +69,36 @@ public class AccountController {
 		
 		context.result((a != null) ? gson.toJson(a) : "{}");
 	};
+	
+	public Handler changeType = (context) -> {
+		Account a = gson.fromJson(context.body(), Account.class);
+		
+		a = as.changeType(a);
+		context.result((a != null) ? gson.toJson(a) : "{}");
+	};
+	public Handler getAllCAccounts = (context) -> {
+		List<Account> accounts = as.getAllAccounts();
+		context.result(gson.toJson(accounts));
+	};
+	
+	public Handler addCAccount = (context) -> {
+		Account a = gson.fromJson(context.body(), Account.class);
+		
+		a = as.addAccount(a);
+		context.result((a != null) ? gson.toJson(a) : "{}");
+	};
+	
+	public Handler getAllSAccounts = (context) -> {
+		Account a = gson.fromJson(context.body(), Account.class);
+		
+		a = as.addAccount(a);
+		context.result((a != null) ? gson.toJson(a) : "{}");
+	};
+	public Handler addSAccount = (context) -> {
+		Account a = gson.fromJson(context.body(), Account.class);
+		
+		a = as.addAccount(a);
+		context.result((a != null) ? gson.toJson(a) : "{}");
+	};
 
 }

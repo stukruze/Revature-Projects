@@ -4,7 +4,6 @@ public class Client {
 
 	
 	private int id;
-	private int accountId;
 	private String firstName;
 	private String lastName;
 	private String address1;
@@ -21,7 +20,6 @@ public class Client {
 			String city, String state, String zip) {
 		super();
 		this.id = id;
-		this.accountId = accountId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address1 = address1;
@@ -31,10 +29,9 @@ public class Client {
 		this.zip = zip;
 	}
 
-	public Client(int accountId, String firstName, String lastName, String address1, String address2, String city,
+	public Client(String firstName, String lastName, String address1, String address2, String city,
 			String state, String zip) {
 		super();
-		this.accountId = accountId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address1 = address1;
@@ -50,14 +47,6 @@ public class Client {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
 	}
 
 	public String getFirstName() {
@@ -118,10 +107,13 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", accountId=" + accountId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", address1=" + address1 + ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip="
-				+ zip + "]";
+		return "Client [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address1=" + address1
+				+ ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
 	}
+
+
+
+
 	
 	
 	

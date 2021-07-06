@@ -29,13 +29,13 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public Client updateClient(Client change) {
-		return cr.updateClient(change);
+	public Client deleteClient(int id) {
+		return cr.deleteClient(id);
 	}
 
 	@Override
-	public Client deleteClient(int id) {
-		return cr.deleteClient(id);
+	public Client updateClient(Client change, int id) {
+		return cr.updateClient(change, id);
 	}
 
 }

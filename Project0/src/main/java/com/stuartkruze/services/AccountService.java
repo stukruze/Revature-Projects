@@ -15,4 +15,7 @@ public interface AccountService {
 	public Account updateAccount(Account change);
 
 	public Account deleteAccount(int id);
+	
+	public Account changeType(Account a);
+
 }

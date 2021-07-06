@@ -15,5 +15,14 @@ public interface AccountRepo {
 	public Account updateAccount(Account change);
 	
 	public Account deleteAccount(int id);
+
+	public Account changeType(Account change);
+
+	public List<Account> getAllCAccounts();
+
+	public Account addCAccount(Account a);
+
+	public Account addSAccount(Account a);
+	
 	
 }

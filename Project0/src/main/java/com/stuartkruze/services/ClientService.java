@@ -12,8 +12,9 @@ public interface ClientService {
 
 	public Client addClient(Client c);
 
-	public Client updateClient(Client change);
+	public Client updateClient(Client change, int id);
 
 	public Client deleteClient(int id);
+
 
 }

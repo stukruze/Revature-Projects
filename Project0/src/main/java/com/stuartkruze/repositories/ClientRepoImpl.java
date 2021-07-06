@@ -38,7 +38,7 @@ public class ClientRepoImpl implements ClientRepo {
 	}
 
 	@Override
-	public Client updateClient(Client change) {
+	public Client updateClient(Client change, int id) {
 		FakeDB.clients.replace(change.getId(), change);
 		return change;
 	}

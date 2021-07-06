@@ -37,5 +37,12 @@ public class AccountServiceImpl implements AccountService {
 	public Account deleteAccount(int id) {
 		return ar.deleteAccount(id);
 	}
+	
+	@Override
+	public Account changeType(Account change) {
+		return ar.changeType(change);
+	}
+
+
 
 }

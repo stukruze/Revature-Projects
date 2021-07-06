@@ -16,11 +16,11 @@ public class FakeDB {
 
 	static {
 		Client c1 = new Client(1, 1, "Stuart", "Kruze", "639 Newark Ave.", "Apt. 3L", "Jersey City", "New Jersey",
-				07306);
+				"07306");
 
 		
 
-		Account a1 = new Account(1, 1, 100.00);
+		Account a1 = new Account(1, 1, 100.00, "checking");
 
 		accounts.put(idCount2++, a1);
 		clients.put(idCount++, c1);

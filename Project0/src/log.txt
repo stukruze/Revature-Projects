@@ -4,3 +4,30 @@
 2021-06-25 16:06:20 ERROR LoggingExamples:16 - something went wrong
 2021-06-25 16:06:20 FATAL LoggingExamples:17 - program died
 2021-06-25 16:06:20 INFO  LoggingExamples:26 - Worked as expected
+2021-07-05 19:22:03 INFO  ClientController:52 - Client Created
+2021-07-05 19:22:30 INFO  ClientController:52 - Client Created
+2021-07-05 19:33:14 INFO  ClientController:55 - Client Created
+2021-07-05 19:44:23 INFO  ClientController:53 - Client Created
+2021-07-05 19:44:27 ERROR ClientController:56 - something went wrong creating a client
+2021-07-05 19:47:37 INFO  ClientController:53 - Client Created
+2021-07-05 20:10:40 INFO  ClientController:25 - All Clients Checked
+2021-07-05 20:11:59 INFO  ClientController:25 - All Clients Checked
+2021-07-05 20:22:04 INFO  ClientController:25 - All Clients Checked
+2021-07-05 20:58:22 INFO  ClientController:25 - All Clients Checked
+2021-07-05 20:59:53 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:00:47 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:26:25 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:30:27 INFO  ClientController:53 - Client Created
+2021-07-05 21:31:08 INFO  ClientController:53 - Client Created
+2021-07-05 21:31:22 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:31:54 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:33:52 INFO  ClientController:25 - All Clients Checked
+2021-07-05 21:35:53 INFO  ClientController:25 - All Clients Checked
+2021-07-05 22:21:22 INFO  ClientController:25 - All Clients Checked
+2021-07-05 22:21:41 INFO  ClientController:25 - All Clients Checked
+2021-07-05 22:24:07 INFO  ClientController:25 - All Clients Checked
+2021-07-05 23:08:34 DEBUG ClientController:124 - id is0
+2021-07-05 23:09:45 DEBUG ClientController:124 - id is2
+2021-07-05 23:32:54 INFO  ClientController:25 - All Clients Checked
+2021-07-05 23:33:39 DEBUG ClientController:155 - id is 0
+2021-07-05 23:33:49 INFO  ClientController:25 - All Clients Checked

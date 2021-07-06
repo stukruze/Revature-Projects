@@ -26,8 +26,8 @@ public class RepoTest {
 		System.out.println(cr.getAllClients());
 		
 
-		c.setAccountId(3);
-		c = cr.updateClient(c);
+		c.setId(3);
+		c = cr.updateClient(c, 3);
 		System.out.println("===UPDATE CLIENT===");
 		System.out.println(c);
 		System.out.println(cr.getClient(c.getId()));
