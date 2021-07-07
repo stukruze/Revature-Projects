@@ -96,7 +96,7 @@ public class ClientRepoDBImpl implements ClientRepo {
 	@Override
 	public Client deleteClient(int id) {
 
-		String sql = "DELETE FROM clients WHERE client_id = ?";
+		String sql = "DELETE FROM clients WHERE client_id = ? RETURNING *";
 
 		try {
 

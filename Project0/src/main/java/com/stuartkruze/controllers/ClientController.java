@@ -58,7 +58,7 @@ public class ClientController {
 	};
 
 	public Handler updateClient = (context) -> {
-		
+
 		String input = context.pathParam("id");
 		int id;
 		try {
@@ -67,11 +67,10 @@ public class ClientController {
 			id = -1;
 		}
 
-		
 		Client c = gson.fromJson(context.body(), Client.class);
-		
+
 		c = cs.updateClient(c, id);
-		
+
 		if (c != null) {
 			context.result((c != null) ? gson.toJson(c) : "{}");
 			context.status(201);
@@ -80,8 +79,7 @@ public class ClientController {
 			context.status(404);
 			log.error("something went wrong updating a client");
 		}
-		
-		
+
 	};
 
 	public Handler deleteClient = (context) -> {
@@ -95,7 +93,14 @@ public class ClientController {
 
 		Client c = cs.deleteClient(id);
 
-		context.result((c != null) ? gson.toJson(c) : "{}");
+		if (c != null) {
+			context.result((c != null) ? gson.toJson(c) : "{}");
+			context.status(205);
+			log.info("Deleted client " + id);
+		} else {
+			context.status(404);
+			log.error("something went wrong deleting a client");
+		}
 	};
 
 }

@@ -31,3 +31,156 @@
 2021-07-05 23:32:54 INFO  ClientController:25 - All Clients Checked
 2021-07-05 23:33:39 DEBUG ClientController:155 - id is 0
 2021-07-05 23:33:49 INFO  ClientController:25 - All Clients Checked
+2021-07-05 23:38:03 INFO  ClientController:78 - Update Made to client 7
+2021-07-05 23:41:38 INFO  ClientController:25 - All Clients Checked
+2021-07-05 23:42:04 INFO  ClientController:53 - Client Created
+2021-07-05 23:42:34 INFO  ClientController:53 - Client Created
+2021-07-05 23:42:49 INFO  ClientController:53 - Client Created
+2021-07-05 23:43:18 INFO  ClientController:25 - All Clients Checked
+2021-07-05 23:46:04 INFO  ClientController:78 - Update Made to client 2
+2021-07-05 23:46:31 INFO  ClientController:78 - Update Made to client 2
+2021-07-05 23:47:46 INFO  ClientController:78 - Update Made to client 2
+2021-07-05 23:48:00 ERROR ClientController:81 - something went wrong updating a client
+2021-07-05 23:56:07 INFO  ClientController:78 - Update Made to client 2
+2021-07-06 15:22:52 ERROR ClientController:56 - something went wrong creating a client
+2021-07-06 20:39:32 ERROR ClientController:56 - something went wrong creating a client
+2021-07-06 20:42:28 ERROR ClientController:56 - something went wrong creating a client
+2021-07-06 20:43:40 ERROR ClientController:60 - something went wrong creating a client
+2021-07-06 20:46:48 INFO  ClientController:82 - Update Made to client 2
+2021-07-06 20:46:54 ERROR ClientController:85 - something went wrong updating a client
+2021-07-06 20:53:09 INFO  ClientController:99 - Deleted client 3
+2021-07-06 20:53:27 INFO  ClientController:25 - All Clients Checked
+2021-07-06 20:54:49 ERROR ClientController:102 - something went wrong deleting a client
+2021-07-06 20:59:19 INFO  ClientController:25 - All Clients Checked
+2021-07-06 21:00:06 INFO  ClientController:25 - All Clients Checked
+2021-07-06 21:00:35 INFO  ClientController:25 - All Clients Checked
+2021-07-06 21:31:24 INFO  ClientController:56 - Account Created
+2021-07-06 21:32:18 INFO  ClientController:56 - Account Created
+2021-07-06 22:12:07 INFO  ClientController:25 - All Clients Checked
+2021-07-06 22:12:21 INFO  ClientController:53 - Client Created
+2021-07-06 22:12:34 INFO  ClientController:25 - All Clients Checked
+2021-07-06 22:12:58 INFO  ClientController:77 - Update Made to client 2
+2021-07-06 22:13:06 ERROR ClientController:80 - something went wrong updating a client
+2021-07-06 22:13:24 INFO  ClientController:99 - Deleted client 2
+2021-07-06 22:14:04 ERROR ClientController:102 - something went wrong deleting a client
+2021-07-06 22:14:39 ERROR ClientController:102 - something went wrong deleting a client
+2021-07-06 22:15:11 INFO  ClientController:99 - Deleted client 2
+2021-07-06 22:15:23 INFO  ClientController:65 - Account Created
+2021-07-06 22:15:28 INFO  ClientController:65 - Account Created
+2021-07-06 22:15:52 INFO  ClientController:65 - Account Created
+2021-07-06 22:16:58 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:17:20 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:17:53 INFO  ClientController:65 - Account Created
+2021-07-06 22:18:19 INFO  ClientController:65 - Account Created
+2021-07-06 22:18:44 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:22:11 INFO  ClientController:25 - All Clients Checked
+2021-07-06 22:37:18 INFO  ClientController:65 - Account Created
+2021-07-06 22:37:35 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:38:46 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:39:01 INFO  ClientController:25 - All Clients Checked
+2021-07-06 22:39:11 INFO  ClientController:53 - Client Created
+2021-07-06 22:40:19 INFO  ClientController:25 - All Clients Checked
+2021-07-06 22:41:06 ERROR ClientController:80 - something went wrong updating a client
+2021-07-06 22:41:10 ERROR ClientController:80 - something went wrong updating a client
+2021-07-06 22:41:39 INFO  ClientController:77 - Update Made to client 2
+2021-07-06 22:41:45 ERROR ClientController:80 - something went wrong updating a client
+2021-07-06 22:41:50 INFO  ClientController:99 - Deleted client 2
+2021-07-06 22:42:07 INFO  ClientController:65 - Account Created
+2021-07-06 22:42:13 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:45:22 INFO  ClientController:65 - Account Created
+2021-07-06 22:45:34 ERROR ClientController:68 - something went wrong creating an account
+2021-07-06 22:46:39 INFO  ClientController:65 - Account Created
+2021-07-06 22:47:15 INFO  ClientController:65 - Account Created
+2021-07-06 22:47:23 INFO  ClientController:65 - Account Created
+2021-07-06 22:47:38 INFO  ClientController:65 - Account Created
+2021-07-06 22:47:42 INFO  ClientController:65 - Account Created
+2021-07-06 22:56:05 INFO  ClientController:65 - Account Created
+2021-07-06 22:56:16 INFO  ClientController:65 - Account Created
+2021-07-06 22:56:19 INFO  ClientController:65 - Account Created
+2021-07-06 23:09:11 DEBUG ClientController:137 - Id2
+2021-07-06 23:22:27 DEBUG ClientController:140 - work
+2021-07-06 23:23:09 DEBUG ClientController:140 - work
+2021-07-06 23:23:16 DEBUG ClientController:140 - work
+2021-07-06 23:23:29 DEBUG ClientController:140 - work
+2021-07-06 23:48:35 DEBUG ClientController:274 - 2000
+2021-07-06 23:49:28 DEBUG ClientController:274 - 2000
+2021-07-06 23:51:17 DEBUG ClientController:274 - 2000
+2021-07-06 23:51:30 DEBUG ClientController:274 - 2000
+2021-07-06 23:51:59 DEBUG ClientController:274 - 2000
+2021-07-06 23:53:15 DEBUG ClientController:274 - 2000
+2021-07-06 23:53:20 DEBUG ClientController:274 - 2000
+2021-07-07 00:04:00 ERROR ClientController:69 - something went wrong creating an account
+2021-07-07 00:05:07 DEBUG ClientController:280 - 0
+2021-07-07 00:05:17 DEBUG ClientController:280 - 0
+2021-07-07 00:06:56 DEBUG ClientController:280 - 0
+2021-07-07 00:06:59 DEBUG ClientController:280 - 0
+2021-07-07 00:07:38 DEBUG ClientController:280 - 0
+2021-07-07 00:09:27 DEBUG ClientController:280 - 0
+2021-07-07 00:29:35 DEBUG ClientController:143 - 
+2021-07-07 00:29:35 DEBUG ClientController:280 - 0
+2021-07-07 00:30:39 DEBUG ClientController:143 - 
+2021-07-07 00:30:39 DEBUG ClientController:280 - 0
+2021-07-07 00:33:02 DEBUG ClientController:143 - 
+2021-07-07 00:41:07 DEBUG ClientController:282 - 400
+2021-07-07 00:44:07 DEBUG ClientController:285 - 400
+2021-07-07 00:45:23 DEBUG ClientController:285 - 
+2021-07-07 00:48:21 DEBUG ClientController:289 - 
+2021-07-07 00:48:26 DEBUG ClientController:289 - 
+2021-07-07 00:48:30 DEBUG ClientController:289 - 400
+2021-07-07 00:49:21 DEBUG ClientController:289 - 
+2021-07-07 00:49:24 DEBUG ClientController:289 - 
+2021-07-07 00:49:28 DEBUG ClientController:289 - 400
+2021-07-07 00:50:03 DEBUG ClientController:289 - 400
+2021-07-07 00:50:11 DEBUG ClientController:289 - 
+2021-07-07 00:50:14 DEBUG ClientController:289 - 
+2021-07-07 00:50:18 DEBUG ClientController:289 - 400
+2021-07-07 00:50:48 DEBUG ClientController:289 - 400
+2021-07-07 00:51:00 DEBUG ClientController:289 - 
+2021-07-07 00:54:27 DEBUG ClientController:289 - 
+2021-07-07 00:54:34 DEBUG ClientController:289 - 
+2021-07-07 00:55:07 DEBUG ClientController:289 - 
+2021-07-07 00:55:12 DEBUG ClientController:289 - 
+2021-07-07 00:55:42 DEBUG ClientController:289 - 
+2021-07-07 01:24:53 INFO  ClientController:148 - got all accounts from client 1
+2021-07-07 01:24:58 INFO  ClientController:148 - got all accounts from client 55
+2021-07-07 01:25:02 INFO  ClientController:148 - got all accounts from client 55
+2021-07-07 01:33:37 INFO  ClientController:150 - got all accounts from client 55
+2021-07-07 01:38:08 ERROR ClientController:153 - something went wrong searching for accounts
+2021-07-07 01:38:22 INFO  ClientController:150 - got all accounts from client 1
+2021-07-07 01:38:44 ERROR ClientController:153 - something went wrong searching for accounts
+2021-07-07 01:38:51 ERROR ClientController:153 - something went wrong searching for accounts
+2021-07-07 01:39:15 ERROR ClientController:153 - something went wrong searching for accounts
+2021-07-07 01:40:26 ERROR ClientController:153 - something went wrong searching for accounts
+2021-07-07 01:54:09 ERROR ClientController:158 - something went wrong searching for accounts
+2021-07-07 01:59:52 INFO  ClientController:173 - got all accounts from client 1
+2021-07-07 01:59:56 ERROR ClientController:176 - something went wrong searching for accounts
+2021-07-07 02:00:03 INFO  ClientController:173 - got all accounts from client 1
+2021-07-07 02:00:11 ERROR ClientController:176 - something went wrong searching for accounts
+2021-07-07 02:03:08 DEBUG ClientController:60 - 3
+2021-07-07 02:06:10 DEBUG ClientController:60 - 2
+2021-07-07 02:07:13 DEBUG ClientController:60 - 2
+2021-07-07 02:09:06 DEBUG ClientController:47 - 2
+2021-07-07 02:49:45 DEBUG ClientController:122 - client id1
+2021-07-07 02:49:45 DEBUG ClientController:123 - account id12
+2021-07-07 03:00:22 DEBUG ClientController:122 - client id1
+2021-07-07 03:00:22 DEBUG ClientController:123 - account id12
+2021-07-07 03:02:15 DEBUG ClientController:122 - client id1
+2021-07-07 03:02:15 DEBUG ClientController:123 - account id12
+2021-07-07 03:02:56 DEBUG ClientController:122 - client id1
+2021-07-07 03:02:56 DEBUG ClientController:123 - account id12
+2021-07-07 03:06:26 DEBUG ClientController:122 - client id1
+2021-07-07 03:06:26 DEBUG ClientController:123 - account id12
+2021-07-07 03:10:01 DEBUG ClientController:122 - client id23
+2021-07-07 03:10:01 DEBUG ClientController:123 - account id12
+2021-07-07 03:10:31 DEBUG ClientController:122 - client id23
+2021-07-07 03:10:31 DEBUG ClientController:123 - account id12
+2021-07-07 03:10:59 DEBUG ClientController:122 - client id1
+2021-07-07 03:10:59 DEBUG ClientController:123 - account id12
+2021-07-07 03:11:23 DEBUG ClientController:122 - client id23
+2021-07-07 03:11:23 DEBUG ClientController:123 - account id5
+2021-07-07 03:20:33 DEBUG ClientController:122 - client id23
+2021-07-07 03:20:33 DEBUG ClientController:123 - account id5
+2021-07-07 03:20:59 DEBUG ClientController:122 - client id23
+2021-07-07 03:20:59 DEBUG ClientController:123 - account id5
+2021-07-07 03:22:04 DEBUG ClientController:122 - client id1
+2021-07-07 03:22:04 DEBUG ClientController:123 - account id23

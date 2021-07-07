@@ -50,39 +50,19 @@ public class AppDB {
 		
 		
 		app.get("/accounts", ac.getAllAccounts);
-		app.get("/accounts/:id", ac.getAccountById);
 		
-		app.post("/accounts", ac.addAccount);
+		app.get("/clients/:id/accounts", ac.getAllAccountsById);
 		
-		app.put("/accounts/:id", ac.updateAccount);
+		app.get("/clients/:id/accounts/:id2", ac.getAccountById2);
 		
-		app.delete("/accounts/:id", ac.deleteAccount);
+		app.post("/clients/:id/accounts", ac.addAccount);
 		
-		app.patch("/accounts/:id", ac.changeType);
+		app.put("/clients/:id/accounts/:id2", ac.updateAccount);
 		
+		app.delete("/clients/:id/accounts/:id2", ac.deleteAccount);
 		
-		app.get("/accounts/checking", ac.getAllCAccounts);
+		app.patch("/clients/:id/accounts/:id2", ac.depositWithdraw);
 		
-		app.get("/accounts/checking:id", ac.getAccountById);
-		
-		app.post("/accounts/checking", ac.addCAccount);
-		
-		app.put("/accounts/checking:id", ac.updateAccount);
-		
-		app.delete("/accounts/checking:id", ac.deleteAccount);
-		
-		app.patch("/accounts/checking:id", ac.changeType);
-		
-
-		app.get("/accounts/savings", ac.getAllSAccounts);
-		
-		app.post("/accounts/savings", ac.addSAccount);
-		
-		app.put("/accounts/savings:id", ac.updateAccount);
-		
-		app.delete("/accounts/savings:id", ac.deleteAccount);
-		
-		app.patch("/accounts/savings:id", ac.changeType);
 		
 	}
 	
