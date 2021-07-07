@@ -41,10 +41,10 @@ public class AccountRepoDBImpl implements AccountRepo {
 
 		return null;
 	}
-	
+
 	@Override
 	public Account getAccountById(int id, int id2) {
-		
+
 		String sql = "SELECT * FROM accounts WHERE client_id = ? AND account_id = ?";
 
 		try {
@@ -66,7 +66,6 @@ public class AccountRepoDBImpl implements AccountRepo {
 
 		return null;
 	}
-
 
 	@Override
 	public List<Account> getAllAccounts() {
@@ -120,7 +119,6 @@ public class AccountRepoDBImpl implements AccountRepo {
 
 		String sql = "UPDATE accounts SET balance = ?, account_type = ? WHERE client_id = ? AND account_id = ? RETURNING *";
 
-		
 		try {
 
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -166,7 +164,6 @@ public class AccountRepoDBImpl implements AccountRepo {
 
 		return null;
 	}
-
 
 	@Override
 	public Account changeType(Account change) {
@@ -289,29 +286,29 @@ public class AccountRepoDBImpl implements AccountRepo {
 
 		int i = 0;
 		int j = 0;
-		
+
 		String sql = "SELECT * FROM Accounts WHERE client_id = ?";
-		
-		if(amountLessThan == null && amountGreaterThan == null) {
+
+		if (amountLessThan == null && amountGreaterThan == null) {
 			sql = "SELECT * FROM Accounts WHERE client_id = ?";
 		} else {
 
-			i=Integer.parseInt(amountLessThan);
-			j=Integer.parseInt(amountGreaterThan);
+			i = Integer.parseInt(amountLessThan);
+			j = Integer.parseInt(amountGreaterThan);
 			sql = "SELECT * FROM Accounts WHERE client_id = ? AND balance BETWEEN ? AND ?";
 
 		}
 		try {
 
 			PreparedStatement ps = conn.prepareStatement(sql);
-			
+
 			ps.setInt(1, id);
-			
-			if(amountLessThan != null && amountGreaterThan != null) {
+
+			if (amountLessThan != null && amountGreaterThan != null) {
 				ps.setInt(2, j);
 				ps.setInt(3, i);
 			}
-			
+
 			ResultSet rs = ps.executeQuery();
 
 			List<Account> accounts = new ArrayList<Account>();
@@ -325,23 +322,61 @@ public class AccountRepoDBImpl implements AccountRepo {
 		}
 		return null;
 	}
-		
-	
+
 	@Override
 	public Account depositWithdraw(Account a, int id, int id2) {
+		
+		double bal = 0;
+		String sql = null;
+		String sql2 = "SELECT * FROM accounts WHERE client_id = ? AND account_id = ?";
+		
+		try {
 
-		String sql = "UPDATE accounts SET balance = ?, account_type = ? WHERE client_id = ? AND account_id = ? RETURNING *";
+			PreparedStatement ps2 = conn.prepareStatement(sql2);
+			ps2.setInt(1, id);
+			ps2.setInt(2, id2);
+
+			ResultSet rs2 = ps2.executeQuery();
+
+			if (rs2.next()) {
+
+				bal = rs2.getInt("balance");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		double dep = a.getDeposit();
+		double wit = a.getWithdraw();
+		
+		
+		if(dep > 0) {
+			bal = bal + dep;
+		}
+
+		if(bal >= wit) {
+			bal = bal - wit;
+			sql = "UPDATE accounts SET balance = ?, fail = 'false' WHERE client_id = ? AND account_id = ? RETURNING *";
+		} else {
+			sql = "UPDATE accounts SET balance = ?, fail = 'true' WHERE client_id = ? AND account_id = ? RETURNING *";
+			
+		}
+		
+		
 
 		
 		try {
 
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setDouble(1, change.getBalance());
-			ps.setString(2, change.getType());
-			ps.setInt(3, id);
-			ps.setInt(4, id2);
+			ps.setDouble(1, bal);
+			ps.setInt(2, id);
+			ps.setInt(3, id2);
 
 			ResultSet rs = ps.executeQuery();
+			
+
 
 			if (rs.next()) {
 
@@ -353,8 +388,7 @@ public class AccountRepoDBImpl implements AccountRepo {
 		}
 		return null;
 	}
-	
-	
+
 	private Account buildAccount(ResultSet rs) throws SQLException {
 
 		Account a = new Account();
@@ -362,9 +396,9 @@ public class AccountRepoDBImpl implements AccountRepo {
 		a.setClientId(rs.getInt("client_id"));
 		a.setBalance(rs.getInt("balance"));
 		a.setType(rs.getString("account_type"));
+		a.setFail(rs.getBoolean("fail"));
 		return a;
 
 	}
-
 
 }

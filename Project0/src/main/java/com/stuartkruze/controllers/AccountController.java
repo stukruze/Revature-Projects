@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.stuartkruze.models.Account;
-import com.stuartkruze.models.Client;
 import com.stuartkruze.services.AccountService;
 
 
@@ -226,10 +225,19 @@ public class AccountController {
 		
 		a = as.depositWithdraw(a, id, id2);
 		
+		
 		if(a != null) {
 			context.result((a != null) ? gson.toJson(a) : "{}");
+
 		} else {
 			context.status(404);
+			log.error("something went wrong completing your transaction");
 		}
+		
+		if(a != null && a.isFail() == true){
+			context.status(422);
+			log.error("insufficient funds");
+		}
+		
 	};
 }

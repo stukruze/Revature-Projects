@@ -184,3 +184,99 @@
 2021-07-07 03:20:59 DEBUG ClientController:123 - account id5
 2021-07-07 03:22:04 DEBUG ClientController:122 - client id1
 2021-07-07 03:22:04 DEBUG ClientController:123 - account id23
+2021-07-07 11:54:49 ERROR ClientController:235 - something went wrong completing your transaction
+2021-07-07 12:02:48 ERROR ClientController:235 - something went wrong completing your transaction
+2021-07-07 12:04:09 ERROR ClientController:337 - 10000.0
+2021-07-07 12:04:10 ERROR ClientController:235 - something went wrong completing your transaction
+2021-07-07 12:05:33 ERROR ClientController:337 - 10000.0
+2021-07-07 12:05:33 ERROR ClientController:341 - 10000.0
+2021-07-07 12:07:23 ERROR ClientController:337 - 10000.0
+2021-07-07 12:07:23 ERROR ClientController:341 - 10000.0
+2021-07-07 12:08:08 ERROR ClientController:337 - 0.0
+2021-07-07 12:08:08 ERROR ClientController:341 - 10000.0
+2021-07-07 12:21:29 ERROR ClientController:357 - 0.0
+2021-07-07 12:21:29 ERROR ClientController:361 - 10000.0
+2021-07-07 12:21:32 ERROR ClientController:357 - 0.0
+2021-07-07 12:21:32 ERROR ClientController:361 - 10000.0
+2021-07-07 12:24:28 ERROR ClientController:357 - 10000.0
+2021-07-07 12:24:28 ERROR ClientController:361 - 10000.0
+2021-07-07 12:24:30 ERROR ClientController:357 - 20000.0
+2021-07-07 12:24:30 ERROR ClientController:361 - 10000.0
+2021-07-07 12:25:41 ERROR ClientController:357 - 30000.0
+2021-07-07 12:25:41 ERROR ClientController:361 - 0.0
+2021-07-07 12:25:43 ERROR ClientController:357 - 20000.0
+2021-07-07 12:25:43 ERROR ClientController:361 - 0.0
+2021-07-07 12:30:25 ERROR ClientController:357 - 10000.0
+2021-07-07 12:30:25 ERROR ClientController:361 - 0.0
+2021-07-07 12:30:27 ERROR ClientController:357 - 10000.0
+2021-07-07 12:30:27 ERROR ClientController:361 - 0.0
+2021-07-07 12:30:30 ERROR ClientController:357 - 10000.0
+2021-07-07 12:30:30 ERROR ClientController:361 - 0.0
+2021-07-07 12:32:01 ERROR ClientController:357 - 10000.0
+2021-07-07 12:32:01 ERROR ClientController:361 - 0.0
+2021-07-07 12:32:15 ERROR ClientController:357 - 10000.0
+2021-07-07 12:32:15 ERROR ClientController:361 - 10000.0
+2021-07-07 12:32:16 ERROR ClientController:357 - 20000.0
+2021-07-07 12:32:16 ERROR ClientController:361 - 10000.0
+2021-07-07 12:32:26 ERROR ClientController:357 - 30000.0
+2021-07-07 12:32:26 ERROR ClientController:361 - 0.0
+2021-07-07 12:32:27 ERROR ClientController:357 - 20000.0
+2021-07-07 12:32:27 ERROR ClientController:361 - 0.0
+2021-07-07 12:32:28 ERROR ClientController:357 - 10000.0
+2021-07-07 12:32:28 ERROR ClientController:361 - 0.0
+2021-07-07 12:39:00 ERROR ClientController:241 - false
+2021-07-07 12:40:41 ERROR ClientController:241 - false
+2021-07-07 12:42:52 DEBUG ClientController:368 - 0.0
+2021-07-07 12:42:52 ERROR ClientController:241 - false
+2021-07-07 12:43:15 DEBUG ClientController:368 - 0.0
+2021-07-07 12:43:15 ERROR ClientController:241 - false
+2021-07-07 12:45:34 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 12:52:33 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 12:53:09 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 12:53:38 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 12:56:44 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 13:01:53 ERROR ClientController:241 - false
+2021-07-07 13:02:05 ERROR ClientController:241 - false
+2021-07-07 13:02:07 ERROR ClientController:241 - false
+2021-07-07 13:03:28 ERROR ClientController:241 - false
+2021-07-07 13:03:30 ERROR ClientController:241 - false
+2021-07-07 13:03:39 ERROR ClientController:241 - false
+2021-07-07 13:03:40 ERROR ClientController:241 - false
+2021-07-07 13:03:53 ERROR ClientController:241 - false
+2021-07-07 13:03:55 ERROR ClientController:241 - false
+2021-07-07 13:05:18 ERROR ClientController:241 - false
+2021-07-07 13:05:19 ERROR ClientController:241 - false
+2021-07-07 13:05:21 ERROR ClientController:241 - false
+2021-07-07 13:05:51 ERROR ClientController:241 - false
+2021-07-07 13:05:53 ERROR ClientController:241 - false
+2021-07-07 13:05:55 ERROR ClientController:241 - false
+2021-07-07 13:08:07 ERROR ClientController:241 - false
+2021-07-07 13:08:08 ERROR ClientController:241 - false
+2021-07-07 13:08:17 ERROR ClientController:241 - false
+2021-07-07 13:08:18 ERROR ClientController:241 - false
+2021-07-07 13:08:19 ERROR ClientController:241 - false
+2021-07-07 13:08:29 ERROR ClientController:241 - false
+2021-07-07 13:09:57 DEBUG ClientController:358 - 2000.0
+2021-07-07 13:09:57 DEBUG ClientController:359 - 10000.0
+2021-07-07 13:09:57 ERROR ClientController:241 - false
+2021-07-07 13:11:55 DEBUG ClientController:358 - 2000.0
+2021-07-07 13:11:55 DEBUG ClientController:359 - 10000.0
+2021-07-07 13:11:55 ERROR ClientController:241 - false
+2021-07-07 13:12:56 DEBUG ClientController:358 - 2000.0
+2021-07-07 13:12:56 DEBUG ClientController:359 - 10000.0
+2021-07-07 13:12:56 DEBUG ClientController:366 - worked
+2021-07-07 13:12:56 ERROR ClientController:241 - false
+2021-07-07 13:25:52 DEBUG ClientController:358 - 2000.0
+2021-07-07 13:25:52 DEBUG ClientController:359 - 10000.0
+2021-07-07 13:25:52 DEBUG ClientController:365 - worked
+2021-07-07 13:25:52 ERROR ClientController:239 - insufficient funds
+2021-07-07 13:25:52 ERROR ClientController:241 - true
+2021-07-07 14:42:03 ERROR ClientController:239 - insufficient funds
+2021-07-07 14:46:15 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 14:46:56 ERROR ClientController:239 - insufficient funds
+2021-07-07 14:50:41 ERROR ClientController:239 - insufficient funds
+2021-07-07 14:52:47 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 14:54:27 ERROR ClientController:233 - something went wrong completing your transaction
+2021-07-07 14:55:12 ERROR ClientController:234 - something went wrong completing your transaction
+2021-07-07 14:56:36 ERROR ClientController:234 - something went wrong completing your transaction --
+2021-07-07 14:59:05 ERROR ClientController:234 - something went wrong completing your transaction
