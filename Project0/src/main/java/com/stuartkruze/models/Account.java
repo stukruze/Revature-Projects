@@ -8,6 +8,7 @@ public class Account {
 	private String type;
 	private double withdraw;
 	private double deposit;
+	private double amount;
 	private boolean fail;
 	
 	public Account() {
@@ -81,7 +82,15 @@ public class Account {
 	public void setDeposit(double deposit) {
 		this.deposit = deposit;
 	}
+	
+	public double getAmount() {
+		return amount;
+	}
 
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	
 	public boolean isFail() {
 		return fail;
 	}
@@ -89,7 +98,6 @@ public class Account {
 	public void setFail(boolean fail) {
 		this.fail = fail;
 	}
-
 
 
 }

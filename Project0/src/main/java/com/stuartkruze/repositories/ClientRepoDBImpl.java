@@ -97,18 +97,21 @@ public class ClientRepoDBImpl implements ClientRepo {
 	public Client deleteClient(int id) {
 
 		String sql = "DELETE FROM clients WHERE client_id = ? RETURNING *";
-
+		
 		try {
 
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 
 			ResultSet rs = ps.executeQuery();
-
+			
+			
 			if (rs.next()) {
-
+				
 				return buildClient(rs);
-			}
+				
+			} 
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -117,20 +120,6 @@ public class ClientRepoDBImpl implements ClientRepo {
 		return null;
 	}
 
-	private Client buildClient(ResultSet rs) throws SQLException {
-
-		Client c = new Client();
-		c.setId(rs.getInt("client_id"));
-		c.setFirstName(rs.getString("first_name"));
-		c.setLastName(rs.getString("last_name"));
-		c.setAddress1(rs.getString("address1"));
-		c.setAddress2(rs.getString("address2"));
-		c.setCity(rs.getString("city"));
-		c.setState(rs.getString("state"));
-		c.setZip(rs.getString("zip"));
-		return c;
-
-	}
 
 	@Override
 	public Client updateClient(Client change, int id) {
@@ -162,4 +151,24 @@ public class ClientRepoDBImpl implements ClientRepo {
 		}
 		return null;
 	}
+	
+	
+
+	private Client buildClient(ResultSet rs) throws SQLException {
+
+		Client c = new Client();
+		c.setId(rs.getInt("client_id"));
+		c.setFirstName(rs.getString("first_name"));
+		c.setLastName(rs.getString("last_name"));
+		c.setAddress1(rs.getString("address1"));
+		c.setAddress2(rs.getString("address2"));
+		c.setCity(rs.getString("city"));
+		c.setState(rs.getString("state"));
+		c.setZip(rs.getString("zip"));
+		return c;
+
+	}
+	
+
 }
+

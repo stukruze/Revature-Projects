@@ -2,6 +2,7 @@ package com.stuartkruze.controllers;
 
 import java.util.List;
 
+
 import org.apache.log4j.Logger;
 import com.google.gson.Gson;
 import com.stuartkruze.models.Client;
@@ -37,8 +38,10 @@ public class ClientController {
 
 		if (c != null) {
 			context.result(gson.toJson(c));
+			log.info("Got Client By Id");
 		} else {
 			context.status(404);
+			log.error("Something went wrong getting Client By Id");
 		}
 
 	};
@@ -46,8 +49,8 @@ public class ClientController {
 	public Handler addClient = (context) -> {
 		Client c = gson.fromJson(context.body(), Client.class);
 
-		c = cs.addClient(c);
 		if (c != null) {
+			c = cs.addClient(c);
 			context.result((c != null) ? gson.toJson(c) : "{}");
 			context.status(201);
 			log.info("Client Created");
@@ -70,8 +73,9 @@ public class ClientController {
 		Client c = gson.fromJson(context.body(), Client.class);
 
 		c = cs.updateClient(c, id);
-
+		
 		if (c != null) {
+			
 			context.result((c != null) ? gson.toJson(c) : "{}");
 			context.status(201);
 			log.info("Update Made to client " + id);

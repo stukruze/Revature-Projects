@@ -29,6 +29,8 @@ public interface AccountService {
 	public List<Account> getAllAccountsById(int id, String amountLessThan, String amountGreaterThan);
 
 	public Account depositWithdraw(Account a, int id, int id2);
+	
+	public Account transfer(Account a, int id, int id2, int id3);
 
 
 }

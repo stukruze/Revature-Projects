@@ -63,6 +63,8 @@ public class AppDB {
 		
 		app.patch("/clients/:id/accounts/:id2", ac.depositWithdraw);
 		
+		app.patch("/clients/:id/accounts/:id2/transfer/:id3", ac.transfer);
+		
 		
 	}
 	

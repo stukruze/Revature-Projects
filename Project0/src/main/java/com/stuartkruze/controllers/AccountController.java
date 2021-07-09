@@ -3,12 +3,13 @@ package com.stuartkruze.controllers;
 
 import java.util.List;
 
+
 import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.stuartkruze.models.Account;
 import com.stuartkruze.services.AccountService;
-
+import com.stuartkruze.services.ClientService;
 
 import io.javalin.http.Handler;
 
@@ -16,6 +17,7 @@ import io.javalin.http.Handler;
 public class AccountController {
 	
 	AccountService as;
+	ClientService cs;
 	Gson gson = new Gson();
 	
 	final static Logger log = Logger.getLogger(ClientController.class);
@@ -27,6 +29,7 @@ public class AccountController {
 	public Handler getAllAccounts = (context) -> {
 		List<Account> accounts = as.getAllAccounts();
 		context.result(gson.toJson(accounts));
+		log.info("All Accounts Checked");
 	};
 	
 	public Handler getAccountById = (context) -> {
@@ -41,8 +44,10 @@ public class AccountController {
 		
 		if(a != null) {
 			context.result(gson.toJson(a));
+			log.info("Got account by Id");
 		} else {
-			context.status(400);
+			context.status(404);
+			log.error("Something went wrong getting account by Id");
 		}
 		
 	};
@@ -65,8 +70,10 @@ public class AccountController {
 		
 		if(a != null) {
 			context.result(gson.toJson(a));
+			log.info("Got account by Id");
 		} else {
 			context.status(404);
+			log.error("Something went wrong getting account by Id");
 		}
 		
 	};
@@ -83,6 +90,7 @@ public class AccountController {
 		
 		Account a = gson.fromJson(context.body(), Account.class);
 		
+
 		a = as.addAccount(a, id);
 		
 		if (a != null) {
@@ -120,7 +128,9 @@ public class AccountController {
 		
 		if(a != null) {
 			context.result((a != null) ? gson.toJson(a) : "{}");
+			log.info("Account Updated");
 		} else {
+			log.error("Account Update failed");
 			context.status(404);
 		}
 		
@@ -145,8 +155,10 @@ public class AccountController {
 		
 		if(a != null) {
 			context.result((a != null) ? gson.toJson(a) : "{}");
+			log.info("Account Deleted");
 		} else {
 			context.status(404);
+			log.info("Account Delete Failed");
 		}
 	};
 	
@@ -228,6 +240,7 @@ public class AccountController {
 		
 		if(a != null) {
 			context.result((a != null) ? gson.toJson(a) : "{}");
+			log.info("The Transaction was Completed ");
 
 		} else {
 			context.status(404);
@@ -237,6 +250,43 @@ public class AccountController {
 		if(a != null && a.isFail() == true){
 			context.status(422);
 			log.error("insufficient funds");
+		}
+		
+	};
+	
+	public Handler transfer  = (context) -> {
+		
+		String input = context.pathParam("id");
+		String input2 = context.pathParam("id2");
+		String input3 = context.pathParam("id3");
+		int id;
+		int id2;
+		int id3;
+		try {
+			id = Integer.parseInt(input);
+			id2 = Integer.parseInt(input2);
+			id3 = Integer.parseInt(input3);
+			
+		} catch (NumberFormatException e) {
+			id = -1;
+			id2 = -1;
+			id3 = -1;
+		}
+		
+		Account a = gson.fromJson(context.body(), Account.class);
+		
+		a = as.transfer(a, id, id2, id3);
+		
+		
+		if(a != null && a.isFail() == false) {
+			context.result((a != null) ? gson.toJson(a) : "{}");
+			log.info("The Transaction was Completed ");
+		} else if(a != null && a.isFail() == true){
+			context.status(422);
+			log.error("insufficient funds");
+		} else {
+			context.status(404);
+			log.error("something went wrong completing your transaction");
 		}
 		
 	};

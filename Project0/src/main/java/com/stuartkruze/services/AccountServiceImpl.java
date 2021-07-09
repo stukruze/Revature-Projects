@@ -72,5 +72,10 @@ public class AccountServiceImpl implements AccountService {
 	public Account depositWithdraw(Account a, int id, int id2) {
 		return ar.depositWithdraw(a, id, id2);
 	}
+	
+	@Override
+	public Account transfer(Account a, int id, int id2, int id3) {
+		return ar.transfer(a, id, id2, id3);
+	}
 
 }
