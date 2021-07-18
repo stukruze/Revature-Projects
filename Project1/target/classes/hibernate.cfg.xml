@@ -33,8 +33,13 @@
 			create
 		</property>
 		
-		<!-- Class Mappings 
-		<mapping resource="actor.hbm.xml" /> -->
+		<!-- Class Mappings -->
+		<mapping class="com.stuartkruze.models.Employee" />
+		<mapping class="com.stuartkruze.models.Contact" />
+		<mapping class="com.stuartkruze.models.Event" />
+		<mapping class="com.stuartkruze.models.Grading" /> 
+		<mapping class="com.stuartkruze.models.Management" />
+		<mapping class="com.stuartkruze.models.Training" /> 
 		
 	</session-factory>
 </hibernate-configuration>
