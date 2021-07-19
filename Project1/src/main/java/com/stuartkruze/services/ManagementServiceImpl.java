@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Management;
 import com.stuartkruze.repositories.ManagementRepo;
 
-public class ManagementServicesImpl implements ManagementServices {
+public class ManagementServiceImpl implements ManagementService {
 
 	public ManagementRepo mr;
 
-	public ManagementServicesImpl(ManagementRepo mr) {
+	public ManagementServiceImpl(ManagementRepo mr) {
 		this.mr = mr;
 	}
 	

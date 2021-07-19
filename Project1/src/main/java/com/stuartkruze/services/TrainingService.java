@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Training;
 
-public interface TrainingServices {
+public interface TrainingService {
 
 	public Training addTraining(Training t);
 	public List<Training> getAllTrainings();

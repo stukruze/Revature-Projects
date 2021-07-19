@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Grading;
 
-public interface GradingServices {
+public interface GradingService {
 
 	public Grading addGrading(Grading g);
 	public List<Grading> getAllGradings();

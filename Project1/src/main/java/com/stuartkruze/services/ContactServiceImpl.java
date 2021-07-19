@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Contact;
 import com.stuartkruze.repositories.ContactRepo;
 
-public class ContactServicesImpl implements ContactServices{
+public class ContactServiceImpl implements ContactService{
 	
 	public ContactRepo cr;
 
-	public ContactServicesImpl(ContactRepo cr) {
+	public ContactServiceImpl(ContactRepo cr) {
 		this.cr = cr;
 	}
 

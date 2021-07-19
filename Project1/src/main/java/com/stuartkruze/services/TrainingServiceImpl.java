@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Training;
 import com.stuartkruze.repositories.TrainingRepo;
 
-public class TrainingServicesImpl implements TrainingServices {
+public class TrainingServiceImpl implements TrainingService {
 
 	public TrainingRepo tr;
 
-	public TrainingServicesImpl(TrainingRepo tr) {
+	public TrainingServiceImpl(TrainingRepo tr) {
 		this.tr = tr;
 	}
 	

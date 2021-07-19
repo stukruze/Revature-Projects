@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Employee;
 import com.stuartkruze.repositories.EmployeeRepo;
 
-public class EmployeeServicesImpl implements EmployeeServices {
+public class EmployeeServiceImpl implements EmployeeService {
 	
 	public EmployeeRepo er;
 
-	public EmployeeServicesImpl(EmployeeRepo er) {
+	public EmployeeServiceImpl(EmployeeRepo er) {
 		this.er = er;
 	}
 

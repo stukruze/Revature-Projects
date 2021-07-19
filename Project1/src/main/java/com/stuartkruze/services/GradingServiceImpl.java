@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Grading;
 import com.stuartkruze.repositories.GradingRepo;
 
-public class GradingServicesImpl implements GradingServices {
+public class GradingServiceImpl implements GradingService {
 
 	public GradingRepo gr;
 
-	public GradingServicesImpl(GradingRepo gr) {
+	public GradingServiceImpl(GradingRepo gr) {
 		this.gr = gr;
 	}
 	

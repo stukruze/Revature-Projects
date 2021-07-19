@@ -5,11 +5,11 @@ import java.util.List;
 import com.stuartkruze.models.Event;
 import com.stuartkruze.repositories.EventRepo;
 
-public class EventServicesImpl implements EventServices {
+public class EventServiceImpl implements EventService {
 
 	public EventRepo er;
 
-	public EventServicesImpl(EventRepo er) {
+	public EventServiceImpl(EventRepo er) {
 		this.er = er;
 	}
 	

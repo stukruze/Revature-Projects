@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Contact;
 
-public interface ContactServices {
+public interface ContactService {
 
 	public Contact addContact(Contact c);
 	public List<Contact> getAllContacts();

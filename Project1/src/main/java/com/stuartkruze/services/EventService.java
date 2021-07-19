@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Event;
 
-public interface EventServices {
+public interface EventService {
 
 	public Event addEvent(Event ev);
 	public List<Event> getAllEvents();

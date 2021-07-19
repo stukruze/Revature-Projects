@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Employee;
 
-public interface EmployeeServices {
+public interface EmployeeService {
 
 	public Employee addEmployee(Employee em);
 	public List<Employee> getAllEmployees();

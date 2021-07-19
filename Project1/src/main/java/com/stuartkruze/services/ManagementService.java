@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.stuartkruze.models.Management;
 
-public interface ManagementServices {
+public interface ManagementService {
 	
 	public Management addManagement(Management m);
 	public List<Management> getAllManagements();
