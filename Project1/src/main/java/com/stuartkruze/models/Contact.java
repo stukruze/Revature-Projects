@@ -1,12 +1,11 @@
 package com.stuartkruze.models;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,11 +29,9 @@ public class Contact {
 	private String email;
 	@Column(name="phone")
 	private String phone;
+	@Column(name="password", nullable = false)
+	private String password;
 	
-
-	@OneToOne
-	@JoinColumn(name="managment_id")
-	private Management managmentId;
 
 
 	public Contact() {
@@ -43,7 +40,7 @@ public class Contact {
 
 
 	public Contact(int id, String address1, String address2, String city, String state, String zip, String email,
-			String phone, Management managmentId) {
+			String phone, String password) {
 		super();
 		this.id = id;
 		this.address1 = address1;
@@ -53,12 +50,11 @@ public class Contact {
 		this.zip = zip;
 		this.email = email;
 		this.phone = phone;
-		this.managmentId = managmentId;
+		this.password = password;
 	}
 
 
-	public Contact(String address1, String address2, String city, String state, String zip, String email, String phone,
-			Management managmentId) {
+	public Contact(String address1, String address2, String city, String state, String zip, String email, String phone, String password) {
 		super();
 		this.address1 = address1;
 		this.address2 = address2;
@@ -67,7 +63,17 @@ public class Contact {
 		this.zip = zip;
 		this.email = email;
 		this.phone = phone;
-		this.managmentId = managmentId;
+		this.password = password;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 
@@ -151,23 +157,13 @@ public class Contact {
 	}
 
 
-	public Management getManagmentId() {
-		return managmentId;
-	}
-
-
-	public void setManagmentId(Management managmentId) {
-		this.managmentId = managmentId;
-	}
-
-
 	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", address1=" + address1 + ", address2=" + address2 + ", city=" + city + ", state="
-				+ state + ", zip=" + zip + ", email=" + email + ", phone=" + phone + ", managmentId=" + managmentId
-				+ "]";
+				+ state + ", zip=" + zip + ", email=" + email + ", phone=" + phone + "]";
 	}
-	
+
+
 
 	
 }

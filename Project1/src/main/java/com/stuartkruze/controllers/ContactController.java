@@ -65,7 +65,7 @@ public class ContactController {
 		populateResult(context, c);
 	};
 
-	public Handler deleteActor = (context) -> {
+	public Handler deleteContact = (context) -> {
 
 		int id = Integer.parseInt(context.pathParam("id"));
 

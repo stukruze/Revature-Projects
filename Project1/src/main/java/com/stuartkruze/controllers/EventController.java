@@ -59,7 +59,7 @@ public class EventController {
 		}
 	};
 
-	public Handler updateActor = (context) -> {
+	public Handler updateEvent = (context) -> {
 		Event ev = gson.fromJson(context.body(), Event.class);
 		ev.setId(Integer.parseInt(context.pathParam("id")));
 

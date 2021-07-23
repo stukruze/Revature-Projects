@@ -61,7 +61,7 @@ public class ManagementController {
 		}
 	};
 
-	public Handler updateActor = (context) -> {
+	public Handler updateManagement = (context) -> {
 		Management m = gson.fromJson(context.body(), Management.class);
 		m.setId(Integer.parseInt(context.pathParam("id")));
 

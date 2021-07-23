@@ -1,7 +1,6 @@
 package com.stuartkruze.models;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 
 @Entity
@@ -28,26 +28,32 @@ public class Employee {
 	@OneToOne
 	@JoinColumn(name="contact_id")
 	private Contact contactId;
+	
+	@OneToOne
+	@JoinColumn(name="managment_id")
+	private Management managmentId;
 
 	public Employee() {
 		super();
 	}
 
-	public Employee(int id, String firstName, String lastName, double tReimbur, Contact contactId) {
+	public Employee(int id, String firstName, String lastName, double tReimbur, Contact contactId, Management managmentId) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.tReimbur = tReimbur;
 		this.contactId = contactId;
+		this.managmentId = managmentId;
 	}
 
-	public Employee(String firstName, String lastName, double tReimbur, Contact contactId) {
+	public Employee(String firstName, String lastName, double tReimbur, Contact contactId, Management managmentId) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.tReimbur = tReimbur;
 		this.contactId = contactId;
+		this.managmentId = managmentId;
 	}
 
 	public int getId() {
@@ -89,12 +95,23 @@ public class Employee {
 	public void setContactId(Contact contactId) {
 		this.contactId = contactId;
 	}
+	
+	public Management getManagmentId() {
+		return managmentId;
+	}
+
+
+	public void setManagmentId(Management managmentId) {
+		this.managmentId = managmentId;
+	}
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", tReimbur=" + tReimbur
-				+ ", contactId=" + contactId + "]";
+				+ ", contactId=" + contactId + ", managmentId=" + managmentId + "]";
 	}
+
+
 	
 
 

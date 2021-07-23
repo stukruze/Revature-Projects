@@ -17,10 +17,6 @@ public class Management {
 	private int id;
 	@Column(name="position", nullable = false)
 	private String position;
-	@Column(name="first_name", nullable = false)
-	private String firstName;
-	@Column(name="last_name", nullable = false)
-	private String lastName;
 	@Column(name="is_dept_head", nullable = false)
 	private boolean isDeptHead;
 	
@@ -28,20 +24,16 @@ public class Management {
 		super();
 	}
 
-	public Management(int id, String position, String firstName, String lastName, boolean isDeptHead) {
+	public Management(int id, String position, boolean isDeptHead) {
 		super();
 		this.id = id;
 		this.position = position;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.isDeptHead = isDeptHead;
 	}
 
-	public Management(String position, String firstName, String lastName, boolean isDeptHead) {
+	public Management(String position, boolean isDeptHead) {
 		super();
 		this.position = position;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.isDeptHead = isDeptHead;
 	}
 
@@ -61,22 +53,6 @@ public class Management {
 		this.position = position;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 	public boolean isDeptHead() {
 		return isDeptHead;
 	}
@@ -87,9 +63,10 @@ public class Management {
 
 	@Override
 	public String toString() {
-		return "Managment [id=" + id + ", position=" + position + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", isDeptHead=" + isDeptHead + "]";
+		return "Management [id=" + id + ", position=" + position + ", isDeptHead=" + isDeptHead + "]";
 	}
+
+
 	
 
 

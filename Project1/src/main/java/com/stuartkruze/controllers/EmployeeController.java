@@ -46,7 +46,7 @@ public class EmployeeController {
 		String fname = context.queryParam("fname");
 		String lname = context.queryParam("lname");
 		
-		if (fname == "" && lname == "") {
+		if (fname == null && lname == null) {
 
 			List<Employee> employees = es.getAllEmployees();
 			if (employees != null) {

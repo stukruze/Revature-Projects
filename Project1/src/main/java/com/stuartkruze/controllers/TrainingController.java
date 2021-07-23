@@ -19,7 +19,7 @@ public class TrainingController {
 		this.ts = ts;
 	}
 
-	public Handler getActorById = (context) -> {
+	public Handler getTrainingById = (context) -> {
 
 		String input = context.pathParam("id");
 		int id;
@@ -42,7 +42,7 @@ public class TrainingController {
 		populateResult(context, t);
 	};
 
-	public Handler getAllTraining = (context) -> {
+	public Handler getAllTrainings = (context) -> {
 
 		List<Training> trainings = ts.getAllTrainings();
 		if (trainings != null) {
@@ -62,7 +62,7 @@ public class TrainingController {
 		populateResult(context, t);
 	};
 
-	public Handler deleteActor = (context) -> {
+	public Handler deleteTraining = (context) -> {
 
 		int id = Integer.parseInt(context.pathParam("id"));
 
