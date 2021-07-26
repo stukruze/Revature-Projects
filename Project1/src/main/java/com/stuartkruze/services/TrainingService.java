@@ -11,4 +11,5 @@ public interface TrainingService {
 	public Training getTraining(int id);
 	public Training updateTraining(Training change);
 	public Training deleteTraining(int id);
+	public List<Training> getTrainingsByEmployeeId(int employee_id);
 }

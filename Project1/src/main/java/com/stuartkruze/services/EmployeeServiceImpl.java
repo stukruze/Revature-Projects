@@ -23,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return er.getAllEmployees();
 	}
 
+	
 	@Override
 	public Employee getEmployee(int id) {
 		return er.getEmployee(id);
@@ -32,6 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee updateEmployee(Employee change) {
 		return er.updateEmployee(change);
 	}
+	
 
 	@Override
 	public Employee deleteEmployee(int id) {
@@ -42,5 +44,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee getEmployeeByName(String fname, String lname) {
 		return er.getEmployeeByName(fname, lname);
 	}
+
+	@Override
+	public Employee getEmployeeByContactId(int contact_id) {
+		return er.getEmployeeByContactId(contact_id);
+	}
+
+
 
 }

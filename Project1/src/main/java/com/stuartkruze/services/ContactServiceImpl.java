@@ -38,4 +38,9 @@ public class ContactServiceImpl implements ContactService{
 		return cr.deleteContact(id);
 	}
 
+	@Override
+	public Contact getContactByEmail(String email) {
+		return cr.getContactByEmail(email);
+	}
+
 }

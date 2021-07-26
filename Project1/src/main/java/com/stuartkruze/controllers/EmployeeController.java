@@ -3,6 +3,7 @@ package com.stuartkruze.controllers;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.stuartkruze.models.Contact;
 import com.stuartkruze.models.Employee;
 import com.stuartkruze.services.EmployeeService;
 
@@ -28,6 +29,20 @@ public class EmployeeController {
 			id = -1;
 		}
 		Employee a = es.getEmployee(id);
+
+		populateResult(context, a);
+	};
+	
+	public Handler getEmployeeByContactId = (context) -> {
+
+		String input = context.pathParam("contact_id");
+		int contact_id;
+		try {
+			contact_id = Integer.parseInt(input);
+		} catch (NumberFormatException e) {
+			contact_id = -1;
+		}
+		Employee a = es.getEmployeeByContactId(contact_id);
 
 		populateResult(context, a);
 	};
@@ -88,7 +103,32 @@ public class EmployeeController {
 
 		populateResult(context, a);
 	};
+	
+	public Handler login = (context) -> {
 
+		String user = context.queryParam("user");
+		String pass = context.queryParam("pass");
+		System.out.println(user);
+		
+		List<Employee> employees = es.getAllEmployees();
+		
+		int temp = 0;
+		
+		for (int i = 0; i < employees.size(); i++) {
+            String u  = employees.get(i).getEmail();
+            String p = employees.get(i).getPassword();
+            System.out.println(u);
+			if (user.equals(u) && pass.equals(p)) {
+				temp = i;
+			}
+		}
+		
+		Employee em = employees.get(temp);
+		populateResult(context, em);
+
+	};
+
+	
 	private void populateResult(Context context, Employee em) {
 		if (em != null) {
 			context.result(gson.toJson(em));
@@ -96,4 +136,5 @@ public class EmployeeController {
 			context.result("{}");
 		}
 	}
+	
 }

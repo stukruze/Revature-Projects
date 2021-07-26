@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="log.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+		
+        </style>
+
+    
+    <title>Tuition Reimbursement Management System</title>
+
+<script>
+    let epoc = new Date().getTime();
+    epoc = JSON.stringify(epoc);
+    const cat = localStorage.getItem('id');
+    let something = 0;
+
+
+    function addTraining() {
+        
+        
+        let xhr2 = new XMLHttpRequest();
+
+
+        xhr2.onreadystatechange = function () {
+
+            if (this.readyState == 4 & this.status == 200) {
+
+                employee = JSON.parse(this.responseText);
+                
+                something++;
+                
+                
+            }
+        };
+
+        url2 = "http://localhost:7000/employees/" + cat;
+        xhr2.open("GET", url2, true);
+
+        xhr2.send();
+
+        let xhr3 = new XMLHttpRequest();
+
+xhr3.onreadystatechange = function () {
+
+    if (this.readyState == 4 & this.status == 200) {
+
+        management = JSON.parse(this.responseText);
+        
+        something++;
+        
+    }
+};
+
+url3 = "http://localhost:7000/managements/2";
+xhr3.open("GET", url3, true);
+
+xhr3.send();
+
+
+
+
+let location = document.getElementById("training").value;
+let desc = document.getElementById("desc").value;
+let cost = document.getElementById("cost").value;
+let types = document.getElementById("types").value;
+let just = document.getElementById("just").value;
+let dos = document.getElementById("dos").value;
+let work = document.getElementById("work").value;
+
+let xhttp = new XMLHttpRequest();
+
+xhttp.onreadystatechange = function () {
+
+if (this.readyState == 4 && this.status == 200) {
+    
+
+    if (JSON.parse(this.responseText)) {
+        document.getElementById("success").innerHTML = "Event Added"
+    } else {
+        document.getElementById("success").innerHTML = "Event Added"
+    }
+} else if (this.readyState == 4) {
+    document.getElementById("success").innerHTML = "Request was not successfully processed!"
+}
+
+
+}
+
+let url = "http://localhost:7000/trainings";
+xhttp.open("POST", url, true);
+
+
+xhttp.setRequestHeader('Content-Type', 'application/json');
+
+
+
+
+let grading = {
+
+}
+
+let event = {
+type: types,
+dateOfStart: dos,
+datefiled: epoc,
+pendingReimbersment: cost,
+location: location,
+description: desc,
+justification: just,
+gradingId: grading,
+workMissed: work
+}
+
+
+
+
+function doStuff() {
+    if(something!==2) {
+        setTimeout(doStuff, 50);
+        return;
+    }
+work2();
+}
+
+doStuff();
+
+function work2(){
+let training = {
+eventId: event,
+employeeId: employee,
+managementId: management
+}
+
+
+xhttp.send(JSON.stringify(training));
+}
+
+
+
+
+
+}
+
+    
+
+
+</script>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            
+            <img src="logo.png" alt="">
+        </div>
+            <ul class="nav-links">
+                <li><a href="employee.html">Tuition Reimbursement</a></li>
+                <li><a href="contact.html">Contact Information</a></li>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+
+    </nav>
+
+  <div class="wrapper">
+  <div class="left">
+      <p>All Employees must complete the Tuition Reimbursement form one week prior to the start of the event.  </p>   
+      
+      
+  </div>
+  <div class="right">
+
+    
+    <div class="signup">
+
+    </div>
+    
+    <div class="login">
+	        
+            <div class="input_field">
+                <label>Location of Training</label>
+                <input id="training" type="text" name="training" class="form-control">
+            </div>    
+            <div class="input_field">
+                <label>Training Description</label>
+                <textarea id="desc" type="text" name="desc" class="form-control" rows="1" cols="33"></textarea>
+            </div>
+
+            <div class="input_field">
+                <label>Training Start Date</label>
+                <input id="dos" type="text" name="dos" class="form-control"></input>
+            </div>
+
+            <div class="input_field">
+                <label>Training Cost $</label>
+                <input id="cost" type="text" name="cost" class="form-control"></input>
+            </div>
+
+            <div class="input_field">
+                <label>Grading Format</label><br>
+                <input type="radio" id="Dpass" name="grade" value="Dpass">
+                <label for="Dpass">Need a D grade to pass</label><br>
+                <input type="radio" id="Cpass" name="grade" value="Cpass">
+                <label for="Cpass">Need a C grade to pass</label><br>
+                <input type="radio" id="Bpass" name="grade" value="Bpass">
+                <label for="Bpass">Need a B grade to pass</label><br>
+                <input type="radio" id="pres" name="grade" value="presentation">
+                <label for="pres">Need to complete a presentation</label>
+            </div>
+            <div class="input_field">
+            <label for="types">Choose the type of Training</label>
+            <select name="types" id="types">
+              <option value="univ">Univercity Courses</option>
+              <option value="sem">Seminars</option>
+              <option value="cpc">Certification Preparation Classes</option>
+              <option value="cert">Certification</option>
+              <option value="tech">Technical Training</option>
+              <option value="other">Other</option>
+            </select> 
+            </div>
+
+            <div class="input_field">
+                <label>Justification for Training</label>
+                <textarea id="just" type="text" name="just" class="form-control" rows="1" cols="33"></textarea>
+            </div>
+            <div class="input_field">
+                <label>Work that will be Missed</label>
+                <textarea id="work" type="text" name="work" class="form-control" rows="1" cols="33"></textarea>
+            </div>
+
+            <div class="btn">
+                <input type="submit" onclick="addTraining()" class="sub" value="ADD EVENT">
+            </div>
+    
+            <p id="success"></p>
+        
+     
+    </div>
+    
+  </div>
+</div>
+
+    <footer style="width:98.5%;">
+        
+            <div class="l-footer">
+                <h3></h3>
+                <p></p>
+                
+
+            </div>
+            <ul class="r-footer">
+			<br />
+				<p></p>                 
+                <!--<li><p></p></li>-->
+            </ul>
+
+        </div>
+    </footer>
+    </body>
+</html>

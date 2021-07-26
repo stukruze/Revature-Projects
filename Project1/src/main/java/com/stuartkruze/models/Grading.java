@@ -20,9 +20,9 @@ public class Grading {
 	private String presentationURL;
 	@Column(name="cutoffdate")
 	private String cutoffdate;
-	@Column(name="urgent", nullable = false)
+	@Column(name="urgent")
 	private boolean urgent;
-	@Column(name="approval_skip", nullable = false)
+	@Column(name="approval_skip")
 	private boolean approvalSkip;
 	
 	public Grading() {

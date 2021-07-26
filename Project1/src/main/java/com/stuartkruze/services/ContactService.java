@@ -11,4 +11,5 @@ public interface ContactService {
 	public Contact getContact(int id);
 	public Contact updateContact(Contact change);
 	public Contact deleteContact(int id);
+	public Contact getContactByEmail(String email);
 }

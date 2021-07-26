@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+body {
+    background: rgba(248, 248, 255, .6);
+}
+
+.wrapper {
+    display: flex;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .left {
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+}
+.wrapper .right {
+    width: 50%;
+    height: 87%;
+    padding: 40px;
+}
+
+.wrapper .left {
+    background: rgb(168, 219, 244);
+    padding: 10px;
+}
+
+.wrapper .left h1 {
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    line-height: 110px;
+    letter-spacing: 3px;
+    color: white;
+    font-size: 50px;
+}
+
+.wrapper .left p {
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    
+}
+
+.wrapper .right {
+    background: white;
+}
+
+.wrapper .right .tabs ul {
+    text-align: center;
+}
+
+.wrapper .right .tabs ul li {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 20px;
+    font-size: 14px;
+    color: rgb(81, 112, 95);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.wrapper .right .tabs ul li.active {
+    border-bottom: 2px solidrgb(81, 112, 95);
+}
+
+.wrapper .right .register, .wrapper .right .login {
+    margin-top: 0px;
+}
+
+.wrapper .right .input_field {
+    margin-bottom: 5px;
+}
+
+.wrapper .right .input_field .input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    font-size: 12px;
+    background: whitesmoke;
+}
+
+.wrapper .right .btn {
+    margin-top: 20px;
+    background: rgb(8, 146, 146);
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.wrapper .right .btn {
+    color: white;
+    display: block;
+    font-size: 14px;
+}
+
+.help-block {
+    color: red;
+}
+
+.sub {
+    color: white;
+    font-size: 16px;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+}

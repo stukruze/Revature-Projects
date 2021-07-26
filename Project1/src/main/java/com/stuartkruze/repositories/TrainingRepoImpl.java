@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.stuartkruze.models.Employee;
 import com.stuartkruze.models.Training;
 import com.stuartkruze.util.HibernateUtil;
 
@@ -38,7 +39,7 @@ public class TrainingRepoImpl implements TrainingRepo {
 		Session sess = HibernateUtil.getSession();
 		List<Training> trainings = null;
 		try {
-			trainings = sess.createQuery("FROM Employee").list();
+			trainings = sess.createQuery("FROM Training").list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		} finally {
@@ -106,6 +107,24 @@ public class TrainingRepoImpl implements TrainingRepo {
 		}
 		
 		return t;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Training> getTrainingsByEmployeeId(int employee_id) {
+		
+		Session sess = HibernateUtil.getSession();
+		List<Training> trainings = null;
+		try {
+			trainings = sess.createQuery("FROM Training where employee_id = :emp").setParameter("emp", employee_id).list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			sess.close();
+		}
+		
+		return trainings;
+		
 	}
 
 }

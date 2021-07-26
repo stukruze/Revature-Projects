@@ -3,6 +3,7 @@ package com.stuartkruze.repositories;
 import java.util.List;
 
 
+
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -144,5 +145,54 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 			return employee;
 	
 	}
+	
+	@Override
+	public double updateEmployeeTR(double change) {
+		
+		Session sess = HibernateUtil.getSession();
+		Transaction tx = null;
+		List<Employee> eml = getAllEmployees();
+		
+		
+		int i = 0;
+		while (i < eml.size()) {
+			eml.get(i).settReimbur(change);
+			try {
+				tx = sess.beginTransaction();
+				sess.update(eml.get(i));
+				tx.commit();
+			} catch (HibernateException e) {
+				e.printStackTrace();
+				tx.rollback();
+				sess.close();
+				return 0;
+			}
+			i++;
+		}
+		
+		sess.close();
+		return change;
+		
+	}
+	
+	@Override
+	public Employee getEmployeeByContactId(int contact_id) {
+		
+		Session sess = HibernateUtil.getSession();
+		Employee em = null;
+
+		try {
+			em = sess.get(Employee.class, contact_id);
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			sess.close();
+		}
+
+		return em;
+	}
+	
+	
+	
 
 }

@@ -12,4 +12,6 @@ public interface EmployeeRepo {
 	public Employee getEmployeeByName(String fname, String lname);
 	public Employee updateEmployee(Employee change);
 	public Employee deleteEmployee(int id);
+	public double updateEmployeeTR(double change);
+	public Employee getEmployeeByContactId(int contact_id);
 }

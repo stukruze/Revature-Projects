@@ -2,6 +2,8 @@ package com.stuartkruze.controllers;
 
 import java.util.List;
 
+
+
 import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
@@ -25,6 +27,7 @@ public class ContactController {
 	public Handler getContactById = (context) -> {
 
 		String input = context.pathParam("id");
+		
 		int id;
 		try {
 			id = Integer.parseInt(input);
@@ -33,6 +36,15 @@ public class ContactController {
 		}
 		Contact c = cs.getContact(id);
 
+		populateResult(context, c);
+	};
+	
+	public Handler getContactByEmail = (context) -> {
+
+		String email = context.pathParam("email");
+		
+		Contact c = cs.getContactByEmail(email);
+		log.error(c);
 		populateResult(context, c);
 	};
 
@@ -73,6 +85,8 @@ public class ContactController {
 
 		populateResult(context, c);
 	};
+
+
 
 	private void populateResult(Context context, Contact c) {
 		if (c != null) {

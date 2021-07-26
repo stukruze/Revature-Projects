@@ -38,4 +38,9 @@ public class TrainingServiceImpl implements TrainingService {
 		return tr.deleteTraining(id);
 	}
 
+	@Override
+	public List<Training> getTrainingsByEmployeeId(int employee_id) {
+		return tr.getTrainingsByEmployeeId(employee_id);
+	}
+
 }

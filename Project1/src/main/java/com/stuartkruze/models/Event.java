@@ -1,5 +1,6 @@
 package com.stuartkruze.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,51 +11,63 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Event")
+@Table(name = "Event")
 public class Event {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name="type", nullable = false)
+	@Column(name = "type")
 	private String type;
-	@Column(name="date_of_start", nullable = false)
-	private long dateOfStart;
-	@Column(name="pending_reimbersment", nullable = false)
+	@Column(name = "date_of_start")
+	private String dateOfStart;
+	@Column(name = "date_filed")
+	private String datefiled;
+	@Column(name = "pending_reimbersment")
 	private double pendingReimbersment;
-	@Column(name="location", nullable = false)
+	@Column(name = "location")
 	private String location;
-	@Column(name="description")
+	@Column(name = "description")
 	private String description;
-	
-	@ManyToOne
-	@JoinColumn(name="grading_id")
+	@Column(name = "justification")
+	private String justification;
+	@Column(name = "work_missed")
+	private String workMissed;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "grading_id")
 	private Grading gradingId;
 
 	public Event() {
 		super();
 	}
 
-	public Event(int id, String type, long dateOfStart, double pendingReimbersment, String location,
-			String description, Grading gradingId) {
+	public Event(int id, String type, String dateOfStart, String datefiled, double pendingReimbersment, String location,
+			String description, String justification, String workMissed, Grading gradingId) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.dateOfStart = dateOfStart;
+		this.datefiled = datefiled;
 		this.pendingReimbersment = pendingReimbersment;
 		this.location = location;
 		this.description = description;
+		this.justification = justification;
+		this.workMissed = workMissed;
 		this.gradingId = gradingId;
 	}
 
-	public Event(String type, long dateOfStart, double pendingReimbersment, String location, String description,
-			Grading gradingId) {
+	public Event(String type, String dateOfStart, String datefiled, double pendingReimbersment, String location,
+			String description, String justification, String workMissed, Grading gradingId) {
 		super();
 		this.type = type;
 		this.dateOfStart = dateOfStart;
+		this.datefiled = datefiled;
 		this.pendingReimbersment = pendingReimbersment;
 		this.location = location;
 		this.description = description;
+		this.justification = justification;
+		this.workMissed = workMissed;
 		this.gradingId = gradingId;
 	}
 
@@ -74,12 +87,20 @@ public class Event {
 		this.type = type;
 	}
 
-	public long getDateOfStart() {
+	public String getDateOfStart() {
 		return dateOfStart;
 	}
 
-	public void setDateOfStart(long dateOfStart) {
+	public void setDateOfStart(String dateOfStart) {
 		this.dateOfStart = dateOfStart;
+	}
+
+	public String getDatefiled() {
+		return datefiled;
+	}
+
+	public void setDatefiled(String datefiled) {
+		this.datefiled = datefiled;
 	}
 
 	public double getPendingReimbersment() {
@@ -106,6 +127,22 @@ public class Event {
 		this.description = description;
 	}
 
+	public String getJustification() {
+		return justification;
+	}
+
+	public void setJustification(String justification) {
+		this.justification = justification;
+	}
+
+	public String getWorkMissed() {
+		return workMissed;
+	}
+
+	public void setWorkMissed(String workMissed) {
+		this.workMissed = workMissed;
+	}
+
 	public Grading getGradingId() {
 		return gradingId;
 	}
@@ -116,12 +153,12 @@ public class Event {
 
 	@Override
 	public String toString() {
-		return "Events [id=" + id + ", type=" + type + ", dateOfStart=" + dateOfStart + ", pendingReimbersment="
-				+ pendingReimbersment + ", location=" + location + ", description=" + description + ", gradingId="
+		return "Event [id=" + id + ", type=" + type + ", dateOfStart=" + dateOfStart + ", datefiled=" + datefiled
+				+ ", pendingReimbersment=" + pendingReimbersment + ", location=" + location + ", description="
+				+ description + ", justification=" + justification + ", workMissed=" + workMissed + ", gradingId="
 				+ gradingId + "]";
 	}
 
-	
-	
-	
+
+
 }

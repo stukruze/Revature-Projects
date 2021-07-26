@@ -12,4 +12,5 @@ public interface EmployeeService {
 	public Employee getEmployeeByName(String fname, String lname);
 	public Employee updateEmployee(Employee change);
 	public Employee deleteEmployee(int id);
+	public Employee getEmployeeByContactId(int contact_id);
 }

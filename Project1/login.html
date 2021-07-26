@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="log.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+		
+        </style>
+
+    
+    <title>Tuition Reimbursement Management System</title>
+
+
+    <script>
+
+
+    function getLogin() {
+
+
+let user = document.getElementById("user").value;
+let pass = document.getElementById("pass").value;
+
+
+let xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function () {
+
+    if (this.readyState == 4 & this.status == 200) {
+
+        let resp = JSON.parse(this.responseText);
+
+        let id = resp.managmentId;
+        localStorage.setItem('id', resp.id);
+        if(resp != null){
+            if(id != null){
+                window.location.href = 'management.html';  
+            }else{
+            window.location.href = 'employee.html';
+            }
+        }
+        else{
+            document.getElementById("error").style.display = "block";
+        }
+
+    }
+};
+
+url = "http://localhost:7000/login?user=" + user + "&pass=" + pass;
+xhr.open("GET", url, true);
+
+xhr.send();
+}
+
+
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            
+            <img src="logo.png" alt="">
+        </div>
+ 
+
+    </nav>
+
+  <div class="wrapper">
+  <div class="left">
+      <h1>Tuition Reimbursement Management System</h1>   
+      
+      
+  </div>
+  <div class="right">
+
+    
+    <div class="signup">
+
+    </div>
+    
+    <div class="login">
+	        
+            <div class="input_field">
+                <label>Email</label>
+                <input id="user" type="text" name="email" class="form-control">
+            </div>    
+            <div class="input_field">
+                <label>Password</label>
+                <input id="pass" type="password" name="password" class="form-control">
+            </div>
+            <div class="btn">
+                <input type="submit" onclick="getLogin()" class="sub" value="LOGIN">
+            </div>
+
+            
+        
+     
+    </div>
+	    <div class="tabs">
+      <ul>
+        <li class="signup_li">Sign Up</li>
+        
+      </ul>
+    </div>
+
+    <div id="error" style="display: none; text-align: center;">
+        <span class="help-block">email or password invalid</span>
+    </div>
+    
+  </div>
+</div>
+
+    <footer style="width:98.5%;">
+        
+            <div class="l-footer">
+                <h3></h3>
+                <p></p>
+                
+
+            </div>
+            <ul class="r-footer">
+			<br />
+				<p></p>                 
+                <!--<li><p></p></li>-->
+            </ul>
+
+        </div>
+    </footer>
+
+    
+</body>
+</html>

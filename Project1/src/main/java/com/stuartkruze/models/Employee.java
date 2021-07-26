@@ -1,5 +1,6 @@
 package com.stuartkruze.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,8 +25,15 @@ public class Employee {
 	private String lastName;
 	@Column(name="t_reimbur", nullable = false)
 	private double tReimbur;
+	@Column(name="l_reimbur")
+	private long lReimbur;
+	@Column(name="password", nullable = false)
+	private String password;
+	@Column(name="email")
+	private String email;
 	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="contact_id")
 	private Contact contactId;
 	
@@ -37,24 +45,38 @@ public class Employee {
 		super();
 	}
 
-	public Employee(int id, String firstName, String lastName, double tReimbur, Contact contactId, Management managmentId) {
+
+
+	public Employee(String firstName, String lastName, double tReimbur, long lReimbur, String password, String email,
+			Contact contactId, Management managmentId) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.tReimbur = tReimbur;
+		this.lReimbur = lReimbur;
+		this.password = password;
+		this.email = email;
+		this.contactId = contactId;
+		this.managmentId = managmentId;
+	}
+
+
+
+	public Employee(int id, String firstName, String lastName, double tReimbur, long lReimbur, String password,
+			String email, Contact contactId, Management managmentId) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.tReimbur = tReimbur;
+		this.lReimbur = lReimbur;
+		this.password = password;
+		this.email = email;
 		this.contactId = contactId;
 		this.managmentId = managmentId;
 	}
 
-	public Employee(String firstName, String lastName, double tReimbur, Contact contactId, Management managmentId) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.tReimbur = tReimbur;
-		this.contactId = contactId;
-		this.managmentId = managmentId;
-	}
+
 
 	public int getId() {
 		return id;
@@ -104,12 +126,40 @@ public class Employee {
 	public void setManagmentId(Management managmentId) {
 		this.managmentId = managmentId;
 	}
+	
+	public long getlReimbur() {
+		return lReimbur;
+	}
+
+	public void setlReimbur(long lReimbur) {
+		this.lReimbur = lReimbur;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", tReimbur=" + tReimbur
-				+ ", contactId=" + contactId + ", managmentId=" + managmentId + "]";
+				+ ", lReimbur=" + lReimbur + ", password=" + password + ", email=" + email + ", contactId=" + contactId
+				+ ", managmentId=" + managmentId + "]";
 	}
+
 
 
 	

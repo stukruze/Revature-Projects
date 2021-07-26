@@ -25,12 +25,9 @@ public class Contact {
 	private String state;
 	@Column(name="zip", nullable = false)
 	private String zip;
-	@Column(name="email")
-	private String email;
 	@Column(name="phone")
 	private String phone;
-	@Column(name="password", nullable = false)
-	private String password;
+
 	
 
 
@@ -39,8 +36,8 @@ public class Contact {
 	}
 
 
-	public Contact(int id, String address1, String address2, String city, String state, String zip, String email,
-			String phone, String password) {
+	public Contact(int id, String address1, String address2, String city, String state, String zip,
+			String phone) {
 		super();
 		this.id = id;
 		this.address1 = address1;
@@ -48,33 +45,23 @@ public class Contact {
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
-		this.email = email;
 		this.phone = phone;
-		this.password = password;
 	}
 
 
-	public Contact(String address1, String address2, String city, String state, String zip, String email, String phone, String password) {
+	public Contact(String address1, String address2, String city, String state, String zip, String phone) {
 		super();
 		this.address1 = address1;
 		this.address2 = address2;
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
-		this.email = email;
 		this.phone = phone;
-		this.password = password;
+		
 	}
 
 
-	public String getPassword() {
-		return password;
-	}
 
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 
 	public int getId() {
@@ -137,16 +124,6 @@ public class Contact {
 	}
 
 
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
 	public String getPhone() {
 		return phone;
 	}
@@ -160,8 +137,11 @@ public class Contact {
 	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", address1=" + address1 + ", address2=" + address2 + ", city=" + city + ", state="
-				+ state + ", zip=" + zip + ", email=" + email + ", phone=" + phone + "]";
+				+ state + ", zip=" + zip + ", phone=" + phone + "]";
 	}
+
+
+
 
 
 

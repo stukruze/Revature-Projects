@@ -2,6 +2,7 @@ package com.stuartkruze.controllers;
 
 import java.util.List;
 
+
 import com.google.gson.Gson;
 import com.stuartkruze.models.Event;
 import com.stuartkruze.services.EventService;
@@ -40,12 +41,11 @@ public class EventController {
 
 		populateResult(context, ev);
 	};
+	
+	
 
 	public Handler getAllEvents = (context) -> {
 
-		String type = context.queryParam("type");
-
-		if (type == "") {
 
 			List<Event> events = es.getAllEvents();
 			if (events != null) {
@@ -54,9 +54,7 @@ public class EventController {
 				context.result("[]");
 			}
 
-		} else {
-			getEventByType(context);
-		}
+		
 	};
 
 	public Handler updateEvent = (context) -> {
@@ -77,15 +75,6 @@ public class EventController {
 		populateResult(context, ev);
 	};
 
-	private void getEventByType(Context context) {
-
-		String type = context.queryParam("type");
-		System.out.println(type);
-
-		List<Event> ev = es.getEventByType(type);
-
-		populateResult2(context, ev);
-	};
 
 	private void populateResult(Context context, Event ev) {
 		if (ev != null) {
@@ -95,11 +84,4 @@ public class EventController {
 		}
 	}
 	
-	private void populateResult2(Context context, List<Event> ev) {
-		if (ev != null) {
-			context.result(gson.toJson(ev));
-		} else {
-			context.result("{}");
-		}
-	}
 }

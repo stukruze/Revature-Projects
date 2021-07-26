@@ -3,6 +3,7 @@ package com.stuartkruze.controllers;
 import java.util.List;
 
 import com.google.gson.Gson;
+import com.stuartkruze.models.Employee;
 import com.stuartkruze.models.Training;
 import com.stuartkruze.services.TrainingService;
 
@@ -31,6 +32,24 @@ public class TrainingController {
 		Training t = ts.getTraining(id);
 
 		populateResult(context, t);
+	};
+	
+	public Handler getTrainingsByEmployeeId = (context) -> {
+
+		String input = context.pathParam("employee_id");
+		int employee_id;
+		try {
+			employee_id = Integer.parseInt(input);
+		} catch (NumberFormatException e) {
+			employee_id = -1;
+		}
+		List<Training> t = ts.getTrainingsByEmployeeId(employee_id);
+
+		if (t != null) {
+			context.result(gson.toJson(t));
+		} else {
+			context.result("[]");
+		}
 	};
 
 	public Handler addTraining = (context) -> {

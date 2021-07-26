@@ -1,7 +1,7 @@
 package com.stuartkruze.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="Traning")
 public class Training {
@@ -17,54 +18,40 @@ public class Training {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name="approved_by_grade", nullable = false)
+	@Column(name="approved_by_grade")
 	private boolean approvedByGrade;
-	@Column(name="approved_by_DS", nullable = false)
+	@Column(name="approved_by_DS")
 	private boolean approvedByDS;
-	@Column(name="approved_by_DH", nullable = false)
+	@Column(name="approved_by_DH")
 	private boolean approvedByDH;
-	@Column(name="approved_by_BC", nullable = false)
+	@Column(name="approved_by_BC")
 	private boolean approvedByBC;
 	@Column(name="awardedReimbursment")
 	private double awardedReimbursment;
-	@Column(name="date_filed", nullable = false)
-	private long dateFiled;
-	@Column(name="justification")
-	private String justification;
 	@Column(name="event_attachment_URL")
 	private String eventAttachmentURL;
 	@Column(name="approval_attachment_URL")
 	private String approvalAttachmentURL;
 	@Column(name="type_of_approval")
 	private String typeOfApproval;
-	@Column(name="work_missed", nullable = false)
-	private long workMissed;
 	@Column(name="additional_info_DS")
-	private boolean additionalInfoDS;
+	private String additionalInfoDS;
 	@Column(name="additional_info_DH")
-	private boolean additionalInfoDH;
+	private String additionalInfoDH;
 	@Column(name="additional_info_BC")
-	private boolean additionalInfoBC;
+	private String additionalInfoBC;
 	@Column(name="denied_by_reason")
 	private String deniedByDSReason;
 	@Column(name="cancelled_by_employee")
 	private boolean cancelledByEmployee;	
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="event_id")
 	private Event eventId;
 	
 	@ManyToOne
-	@JoinColumn(name="DS_id")
-	private Management DSId;
-	
-	@ManyToOne
-	@JoinColumn(name="DH_id")
-	private Management DHId;
-	
-	@ManyToOne
-	@JoinColumn(name="BC_id")
-	private Management BCId;
+	@JoinColumn(name="management_id")
+	private Management managementId;
 	
 	@ManyToOne
 	@JoinColumn(name="employee_id")
@@ -75,10 +62,9 @@ public class Training {
 	}
 
 	public Training(int id, boolean approvedByGrade, boolean approvedByDS, boolean approvedByDH, boolean approvedByBC,
-			double awardedReimbursment, long dateFiled, String justification, String eventAttachmentURL,
-			String approvalAttachmentURL, String typeOfApproval, long workMissed, boolean additionalInfoDS,
-			boolean additionalInfoDH, boolean additionalInfoBC, String deniedByDSReason, boolean cancelledByEmployee,
-			Event eventId, Management dSId, Management dHId, Management bCId, Employee employeeId) {
+			double awardedReimbursment, String eventAttachmentURL, String approvalAttachmentURL, String typeOfApproval,
+			String additionalInfoDS, String additionalInfoDH, String additionalInfoBC, String deniedByDSReason,
+			boolean cancelledByEmployee, Event eventId, Management managementId, Employee employeeId) {
 		super();
 		this.id = id;
 		this.approvedByGrade = approvedByGrade;
@@ -86,50 +72,39 @@ public class Training {
 		this.approvedByDH = approvedByDH;
 		this.approvedByBC = approvedByBC;
 		this.awardedReimbursment = awardedReimbursment;
-		this.dateFiled = dateFiled;
-		this.justification = justification;
 		this.eventAttachmentURL = eventAttachmentURL;
 		this.approvalAttachmentURL = approvalAttachmentURL;
 		this.typeOfApproval = typeOfApproval;
-		this.workMissed = workMissed;
 		this.additionalInfoDS = additionalInfoDS;
 		this.additionalInfoDH = additionalInfoDH;
 		this.additionalInfoBC = additionalInfoBC;
 		this.deniedByDSReason = deniedByDSReason;
 		this.cancelledByEmployee = cancelledByEmployee;
 		this.eventId = eventId;
-		DSId = dSId;
-		DHId = dHId;
-		BCId = bCId;
+		this.managementId = managementId;
 		this.employeeId = employeeId;
 	}
 
 	public Training(boolean approvedByGrade, boolean approvedByDS, boolean approvedByDH, boolean approvedByBC,
-			double awardedReimbursment, long dateFiled, String justification, String eventAttachmentURL,
-			String approvalAttachmentURL, String typeOfApproval, long workMissed, boolean additionalInfoDS,
-			boolean additionalInfoDH, boolean additionalInfoBC, String deniedByDSReason, boolean cancelledByEmployee,
-			Event eventId, Management dSId, Management dHId, Management bCId, Employee employeeId) {
+			double awardedReimbursment, String eventAttachmentURL, String approvalAttachmentURL, String typeOfApproval,
+			String additionalInfoDS, String additionalInfoDH, String additionalInfoBC, String deniedByDSReason,
+			boolean cancelledByEmployee, Event eventId, Management managementId, Employee employeeId) {
 		super();
 		this.approvedByGrade = approvedByGrade;
 		this.approvedByDS = approvedByDS;
 		this.approvedByDH = approvedByDH;
 		this.approvedByBC = approvedByBC;
 		this.awardedReimbursment = awardedReimbursment;
-		this.dateFiled = dateFiled;
-		this.justification = justification;
 		this.eventAttachmentURL = eventAttachmentURL;
 		this.approvalAttachmentURL = approvalAttachmentURL;
 		this.typeOfApproval = typeOfApproval;
-		this.workMissed = workMissed;
 		this.additionalInfoDS = additionalInfoDS;
 		this.additionalInfoDH = additionalInfoDH;
 		this.additionalInfoBC = additionalInfoBC;
 		this.deniedByDSReason = deniedByDSReason;
 		this.cancelledByEmployee = cancelledByEmployee;
 		this.eventId = eventId;
-		DSId = dSId;
-		DHId = dHId;
-		BCId = bCId;
+		this.managementId = managementId;
 		this.employeeId = employeeId;
 	}
 
@@ -181,22 +156,6 @@ public class Training {
 		this.awardedReimbursment = awardedReimbursment;
 	}
 
-	public long getDateFiled() {
-		return dateFiled;
-	}
-
-	public void setDateFiled(long dateFiled) {
-		this.dateFiled = dateFiled;
-	}
-
-	public String getJustification() {
-		return justification;
-	}
-
-	public void setJustification(String justification) {
-		this.justification = justification;
-	}
-
 	public String getEventAttachmentURL() {
 		return eventAttachmentURL;
 	}
@@ -221,35 +180,27 @@ public class Training {
 		this.typeOfApproval = typeOfApproval;
 	}
 
-	public long getWorkMissed() {
-		return workMissed;
-	}
-
-	public void setWorkMissed(long workMissed) {
-		this.workMissed = workMissed;
-	}
-
-	public boolean isAdditionalInfoDS() {
+	public String getAdditionalInfoDS() {
 		return additionalInfoDS;
 	}
 
-	public void setAdditionalInfoDS(boolean additionalInfoDS) {
+	public void setAdditionalInfoDS(String additionalInfoDS) {
 		this.additionalInfoDS = additionalInfoDS;
 	}
 
-	public boolean isAdditionalInfoDH() {
+	public String getAdditionalInfoDH() {
 		return additionalInfoDH;
 	}
 
-	public void setAdditionalInfoDH(boolean additionalInfoDH) {
+	public void setAdditionalInfoDH(String additionalInfoDH) {
 		this.additionalInfoDH = additionalInfoDH;
 	}
 
-	public boolean isAdditionalInfoBC() {
+	public String getAdditionalInfoBC() {
 		return additionalInfoBC;
 	}
 
-	public void setAdditionalInfoBC(boolean additionalInfoBC) {
+	public void setAdditionalInfoBC(String additionalInfoBC) {
 		this.additionalInfoBC = additionalInfoBC;
 	}
 
@@ -277,28 +228,12 @@ public class Training {
 		this.eventId = eventId;
 	}
 
-	public Management getDSId() {
-		return DSId;
+	public Management getManagementId() {
+		return managementId;
 	}
 
-	public void setDSId(Management dSId) {
-		DSId = dSId;
-	}
-
-	public Management getDHId() {
-		return DHId;
-	}
-
-	public void setDHId(Management dHId) {
-		DHId = dHId;
-	}
-
-	public Management getBCId() {
-		return BCId;
-	}
-
-	public void setBCId(Management bCId) {
-		BCId = bCId;
+	public void setManagementId(Management managementId) {
+		this.managementId = managementId;
 	}
 
 	public Employee getEmployeeId() {
@@ -313,14 +248,13 @@ public class Training {
 	public String toString() {
 		return "Training [id=" + id + ", approvedByGrade=" + approvedByGrade + ", approvedByDS=" + approvedByDS
 				+ ", approvedByDH=" + approvedByDH + ", approvedByBC=" + approvedByBC + ", awardedReimbursment="
-				+ awardedReimbursment + ", dateFiled=" + dateFiled + ", justification=" + justification
-				+ ", eventAttachmentURL=" + eventAttachmentURL + ", approvalAttachmentURL=" + approvalAttachmentURL
-				+ ", typeOfApproval=" + typeOfApproval + ", workMissed=" + workMissed + ", additionalInfoDS="
+				+ awardedReimbursment + ", eventAttachmentURL=" + eventAttachmentURL + ", approvalAttachmentURL="
+				+ approvalAttachmentURL + ", typeOfApproval=" + typeOfApproval + ", additionalInfoDS="
 				+ additionalInfoDS + ", additionalInfoDH=" + additionalInfoDH + ", additionalInfoBC=" + additionalInfoBC
 				+ ", deniedByDSReason=" + deniedByDSReason + ", cancelledByEmployee=" + cancelledByEmployee
-				+ ", eventId=" + eventId + ", DSId=" + DSId + ", DHId=" + DHId + ", BCId=" + BCId + ", employeeId="
-				+ employeeId + "]";
+				+ ", eventId=" + eventId + ", managementId=" + managementId + ", employeeId=" + employeeId + "]";
 	}
+
 
 
 
