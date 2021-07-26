@@ -30588,3 +30588,313 @@ Caused by: org.postgresql.util.PSQLException: ERROR: constraint "fk1hfn0g5o4btuv
 2021-07-25 22:35:30 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@52559a69] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2021-07-25 22:35:31 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@65ef48f2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2021-07-25 22:35:31 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 00:25:39 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 00:25:40 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 00:25:41 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 00:25:41 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 00:25:41 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 00:25:41 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 00:25:41 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 00:25:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 00:25:43 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 00:25:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 00:25:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 02:28:05 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08006
+2021-07-26 02:28:05 ERROR SqlExceptionHelper:142 - An I/O error occurred while sending to the backend.
+2021-07-26 02:28:10 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08006
+2021-07-26 02:28:10 ERROR SqlExceptionHelper:142 - An I/O error occurred while sending to the backend.
+2021-07-26 02:28:38 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08006
+2021-07-26 02:28:38 ERROR SqlExceptionHelper:142 - An I/O error occurred while sending to the backend.
+2021-07-26 02:28:45 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08006
+2021-07-26 02:28:45 ERROR SqlExceptionHelper:142 - An I/O error occurred while sending to the backend.
+2021-07-26 05:44:56 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 05:44:57 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 05:44:57 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 05:44:57 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 05:44:57 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 05:44:57 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 05:44:57 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 05:44:58 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 05:45:00 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:45:00 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:45:00 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 05:49:48 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 05:49:48 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 05:49:49 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 05:49:49 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 05:49:49 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 05:49:49 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 05:49:49 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 05:49:50 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 05:49:52 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:49:52 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:49:52 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 05:52:24 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 05:52:25 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 05:52:26 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 05:52:26 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 05:52:26 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 05:52:26 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 05:52:26 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 05:52:27 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 05:52:28 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@43ecfeb5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:52:29 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@14422d9d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 05:52:29 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:17:27 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:17:28 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:17:28 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:17:28 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:17:28 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:17:28 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:17:28 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:17:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:17:31 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e5e6fc4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:17:31 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abad89c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:17:31 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:19:16 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:19:18 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:19:18 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:19:19 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:19:19 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:19:19 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:19:19 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:19:20 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:19:22 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e34b127] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:19:22 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f79edee] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:19:23 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:20:04 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:20:06 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:20:07 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:20:07 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:20:07 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:20:07 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:20:07 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:20:08 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:20:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@373e6b9d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:20:10 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1e3ff233] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:20:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:27:40 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:27:41 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:27:41 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:27:41 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:27:41 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:27:41 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:27:41 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:27:42 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:27:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e34b127] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:27:44 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f79edee] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:27:44 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:30:13 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:30:15 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:30:15 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:30:15 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:30:15 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:30:15 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:30:15 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:30:16 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:30:18 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e5e6fc4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:30:18 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abad89c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:30:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:30:35 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:30:36 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:30:37 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:30:37 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:30:37 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:30:37 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:30:37 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:30:38 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:30:39 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:30:40 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:30:40 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:37:12 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:37:12 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(2) is still referenced from table "traning".
+2021-07-26 06:37:12 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 06:37:24 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:37:24 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 06:37:24 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 06:38:17 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:38:17 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 06:38:17 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 06:38:48 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:38:48 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 06:38:48 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 06:41:45 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:41:46 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:41:47 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:41:47 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:41:47 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:41:47 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:41:47 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:41:48 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:41:50 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:41:50 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:41:51 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:48:41 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:48:41 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(1) is still referenced from table "event".
+2021-07-26 06:48:41 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 06:51:19 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:51:20 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:51:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:51:20 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:51:20 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:51:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:51:20 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:51:21 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:51:23 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:51:24 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:51:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:52:23 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 06:52:24 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 06:52:25 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 06:52:25 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 06:52:25 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 06:52:25 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 06:52:25 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 06:52:26 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 06:52:27 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:52:28 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 06:52:28 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 06:57:10 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 06:57:10 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "managment" violates foreign key constraint "fk768n2jfnvcdj10nsjaxbwajug" on table "employee"
+  Detail: Key (id)=(1) is still referenced from table "employee".
+2021-07-26 06:57:10 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:02:25 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:02:25 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 07:02:25 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:03:48 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:03:48 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(1) is still referenced from table "event".
+2021-07-26 07:03:48 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:05:27 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:05:27 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "managment" violates foreign key constraint "fk768n2jfnvcdj10nsjaxbwajug" on table "employee"
+  Detail: Key (id)=(1) is still referenced from table "employee".
+2021-07-26 07:05:27 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:05:32 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:05:32 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "managment" violates foreign key constraint "fk768n2jfnvcdj10nsjaxbwajug" on table "employee"
+  Detail: Key (id)=(2) is still referenced from table "employee".
+2021-07-26 07:05:32 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:05:35 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:05:35 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "managment" violates foreign key constraint "fk768n2jfnvcdj10nsjaxbwajug" on table "employee"
+  Detail: Key (id)=(3) is still referenced from table "employee".
+2021-07-26 07:05:35 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:06:41 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:06:41 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(2) is not present in table "grading".
+2021-07-26 07:06:41 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:06:41 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(1) is still referenced from table "event".
+2021-07-26 07:06:41 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:06:43 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:06:43 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 07:06:43 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:07:08 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 07:07:09 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 07:07:10 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 07:07:10 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 07:07:10 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 07:07:10 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 07:07:10 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 07:07:11 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 07:07:13 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:07:13 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:07:14 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 07:07:25 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:07:25 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:07:25 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:07:25 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(2) is still referenced from table "event".
+2021-07-26 07:07:25 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:08:09 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 07:08:09 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 07:08:10 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 07:08:10 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 07:08:10 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 07:08:10 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 07:08:10 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 07:08:11 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 07:08:12 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:08:13 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:08:13 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 07:08:37 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:08:37 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:08:37 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:08:37 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(2) is still referenced from table "event".
+2021-07-26 07:08:37 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:11:32 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 07:11:33 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 07:11:33 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 07:11:33 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 07:11:33 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 07:11:33 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 07:11:33 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 07:11:34 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 07:11:36 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6b649efa] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:11:36 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6babffb5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:11:36 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 07:12:07 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:12:07 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:12:08 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:12:08 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(2) is still referenced from table "event".
+2021-07-26 07:12:08 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:13:24 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:13:24 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:13:31 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:13:31 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:13:50 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:13:50 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:14:41 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:14:41 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(2) is still referenced from table "event".
+2021-07-26 07:14:41 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:14:47 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:14:47 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "grading" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm" on table "event"
+  Detail: Key (id)=(2) is still referenced from table "event".
+2021-07-26 07:14:47 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:14:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 07:14:59 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 07:15:00 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 07:15:00 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 07:15:00 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 07:15:00 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 07:15:00 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 07:15:01 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 07:15:03 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e64c1a9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:15:03 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c713b7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:15:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-26 07:16:16 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:16:16 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 07:16:16 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:18:55 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:18:55 ERROR SqlExceptionHelper:142 - ERROR: update or delete on table "event" violates foreign key constraint "fkq99wum3la3deosn97qggncvii" on table "traning"
+  Detail: Key (id)=(1) is still referenced from table "traning".
+2021-07-26 07:18:55 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2021-07-26 07:21:07 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 23503
+2021-07-26 07:21:07 ERROR SqlExceptionHelper:142 - ERROR: insert or update on table "event" violates foreign key constraint "fkm48wnpt7k0dkpqiqrahus2nxm"
+  Detail: Key (grading_id)=(1) is not present in table "grading".
+2021-07-26 07:21:18 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.5.3.Final
+2021-07-26 07:21:19 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-26 07:21:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2021-07-26 07:21:20 INFO  pooling:115 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://database-1.cp3v0h9viwot.us-east-2.rds.amazonaws.com/postgres]
+2021-07-26 07:21:20 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=stukruze}
+2021-07-26 07:21:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2021-07-26 07:21:20 INFO  DriverManagerConnectionProviderImpl:274 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2021-07-26 07:21:21 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-26 07:21:23 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@52559a69] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:21:23 INFO  access:48 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@65ef48f2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-07-26 07:21:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]

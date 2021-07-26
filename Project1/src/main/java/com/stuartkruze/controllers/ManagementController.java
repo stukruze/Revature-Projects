@@ -44,10 +44,6 @@ public class ManagementController {
 
 	public Handler getAllManagements = (context) -> {
 
-		String fname = context.queryParam("fname");
-		String lname = context.queryParam("lname");
-
-		if (fname == "" && lname == "") {
 
 			List<Management> managements = ms.getAllManagements();
 			if (managements != null) {
@@ -56,9 +52,7 @@ public class ManagementController {
 				context.result("[]");
 			}
 
-		} else {
-			getManagementByName(context);
-		}
+		
 	};
 
 	public Handler updateManagement = (context) -> {

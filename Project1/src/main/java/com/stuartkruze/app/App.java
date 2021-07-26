@@ -11,7 +11,9 @@ import com.stuartkruze.controllers.TrainingController;
 import com.stuartkruze.models.Contact;
 import com.stuartkruze.models.Employee;
 import com.stuartkruze.models.Event;
+import com.stuartkruze.models.Grading;
 import com.stuartkruze.models.Management;
+import com.stuartkruze.models.Training;
 import com.stuartkruze.repositories.ContactRepo;
 import com.stuartkruze.repositories.ContactRepoImpl;
 import com.stuartkruze.repositories.EmployeeRepo;
@@ -117,8 +119,21 @@ public class App {
 		Employee em7 = new Employee("test", "test", 1000.00,0, "pass",  "MarilynBShelton@rhyta.com", cm8, mm3);
 		emr.addEmployee(em7);
 		
-		Event ev1 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "Rutgers University","cloud computing", "need it", "none", null);
+		
+		Grading gr1 = new Grading();
+		gr.addGrading(gr1);
+		Event ev1 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "Rutgers University","cloud computing", "need it", "none", gr1);
 		evr.addEvent(ev1);
+		Training tra1 = new Training(false, false, false, false, 0, null, null, null, null, null, null, null, false, ev1, mm2, em2);
+		tr.addTraining(tra1);
+		
+		Grading gr3 = new Grading();
+		gr.addGrading(gr3);
+		Event ev3 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "NJIT","PHP programming", "want it", "none", gr3);
+		evr.addEvent(ev3);
+		Training tra3 = new Training(false, false, false, false, 0, null, null, null, null, null, null, null, false, ev3, mm1, em1);
+		tr.addTraining(tra3);
+		
 		
 		app.get("/contacts/:id", cc.getContactById);
 		app.get("/contacts", cc.getAllContacts);

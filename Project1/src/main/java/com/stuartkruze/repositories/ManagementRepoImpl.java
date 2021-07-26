@@ -41,16 +41,16 @@ public class ManagementRepoImpl implements ManagementRepo {
 	public List<Management> getAllManagements() {
 		
 		Session sess = HibernateUtil.getSession();
-		List<Management> managments = null;
+		List<Management> managements = null;
 		try {
-			managments = sess.createQuery("FROM Managment").list();
+			managements = sess.createQuery("FROM Management").list();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		} finally {
 			sess.close();
 		}
 		
-		return managments;
+		return managements;
 	}
 
 	@Override

@@ -19,15 +19,15 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name="first_name", nullable = false)
+	@Column(name="first_name")
 	private String firstName;
-	@Column(name="last_name", nullable = false)
+	@Column(name="last_name")
 	private String lastName;
-	@Column(name="t_reimbur", nullable = false)
+	@Column(name="t_reimbur")
 	private double tReimbur;
 	@Column(name="l_reimbur")
 	private long lReimbur;
-	@Column(name="password", nullable = false)
+	@Column(name="password")
 	private String password;
 	@Column(name="email")
 	private String email;
