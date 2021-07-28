@@ -36,13 +36,22 @@
 
     </nav>
 
-  <div class="wrapper">
-  <div class="left">
-      <p>Welcome to the Admin Page</p> 
+    
+  <div class="wrapper" style="width: 90%;">
+  <div class="left" id="left">
+      <h1 style="font-size: 18px; line-height: 20px;" id="ahuh">Welcome to the Admin Page</h1> 
+      <div style="text-align: center; font-size: medium; color: aquamarine;"><p id="position"></p></div>
       
       <select class="names" id="names"></select>
-      <select class="data" id="data"></select>
-      <select class="train" id="train"></select>
+      <div id="remove">
+
+      </div>
+      <div id="remove">
+
+      </div>
+      <p id="success"></p>
+
+
       
   </div>
   <div class="right">
@@ -54,54 +63,207 @@
     
     <div class="login" id="login">
 	        
-        
+      <div id="top"></div>
+    
+
+      <div id="bottom" style="text-align: center; background-color: aquamarine;"></div>
+      
+  
      
     </div>
     
   </div>
 </div>
 
-    <footer style="width:98.5%;">
-        
-            <div class="l-footer">
-                <h3></h3>
-                <p></p>
-                
 
-            </div>
-            <ul class="r-footer">
-			<br />
-				<p></p>                 
-                <!--<li><p></p></li>-->
-            </ul>
-
-        </div>
-    </footer>
     </body>
 
     <script>
 
-        const TRAINING_URL = 'http://localhost:7000/trainings';
-        
-        const select = document.querySelector('.names');
-        const select2 = document.querySelector('.data');
-        const select3 = document.querySelector('.train');
+const id = localStorage.getItem('id');
+const EMPLOYEE_URL = 'http://localhost:7000/employees/' + id;
+const elementLeft = document.getElementById("remove");
+position = "";
+departmenthead = "";
 
-        const nameArray = [];
+
+fetch(EMPLOYEE_URL).then(res => {
+            return res.json();
+          }).then(data => {
+            console.log(data.managmentId.position);
+            position = data.managmentId.position;
+            
+            departmenthead = data.managmentId.isDeptHead;
+            const toph2 = document.getElementById("position");
+            
+            if(departmenthead == true){
+              toph2.innerText = position + " also Department Head";
+            } else{
+              toph2.innerText = position;
+            }
+          });     
+            
+
+
+          
+
+function sub1(AorD, trainId){
+
+reason = document.getElementById("dbr").value;
+ai = document.getElementById("ai").value;
+let url = "http://localhost:7000/trainings/" + trainId;
+
+
+fetch(url).then(res => {
+            return res.json();
+          }).then(data => {
+
+            obj1 = data.employeeId;
+            obj2 = data.eventId;
+            obj3 = data.managmentId;
+
+
+let xhttp20 = new XMLHttpRequest();
+
+xhttp20.onreadystatechange = function () {
+
+if (this.readyState == 4 && this.status == 200) {
+    
+
+    if (JSON.parse(this.responseText)) {
+        document.getElementById("success").innerHTML = " Completed"
+    } else {
+        document.getElementById("success").innerHTML = " Completed"
+    }
+} else if (this.readyState == 4) {
+    document.getElementById("success").innerHTML = "Request was not successfully processed!"
+}
+
+
+}
+
+
+xhttp20.open("PUT", url, true);
+
+
+
+console.log(data);
+
+reasonObject = {}
+
+deniedByDS = data.deniedByDS;
+deniedByDH = data.deniedByDH;
+deniedByBC = data.deniedByBC;
+approvedByDS = data.approvedByDS;
+approvedByDH = data.approvedByDH;
+approvedByBC = data.approvedByBC;
+approvedByGrade = data.approvedByGrade;
+deniedByDS = data.deniedByDS;
+deniedByDH = data.deniedByDH;
+deniedByBC = data.deniedByBC;
+awardedReimbursment = data.awardedReimbursment;
+cancelledByEmployee = data.cancelledByEmployee;
+
+if(position == "Direct Supervisor" && departmenthead != true && AorD == 2){
+  approvedByDS = true;
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByDS: approvedByDS,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+awardedReimbursment: awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+}
+}
+
+if(position == "Direct Supervisor" && departmenthead == true && AorD == 2){
+  
+
+
+approvedByDS = true;
+approvedByDH = true;
+alert(approvedByDS);
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByDS: approvedByDS,
+approvedByDH: approvedByDH,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+awardedReimbursment: awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+}
+}
+
+if(position == "Benefits Coordinator" && AorD == 2 && approvedByDS == "true" && approvedByDH == "true"){
+  
+  approvedByBC = true;
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByBC: approvedByBC,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+awardedReimbursment: data.awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+}
+}
+
+
+
+
+
+xhttp20.send(JSON.stringify(reasonObject));
+});
+}
+
+          
+
+
+const TRAINING_URL = 'http://localhost:7000/trainings';
+
+const select = document.querySelector('.names');
+
+
+const nameArray = [];
         const idArray = [];
         
+
 
         
         fetch(TRAINING_URL).then(res => {
             return res.json();
-          }).then(data => {
-            for (let i = 0; i < data.length; i++) {
+          }).then(data4 => {
+
+
+
+            console.log(data4);
+
+            for (let i = 0; i < data4.length; i++) {
                
-                
-            const fname = data[i].employeeId.firstName;
+                console.log(data4);
+            let fname = data4[i].employeeId.firstName;
             
-            const lname = data[i].employeeId.lastName;
-            const id = data[i].employeeId.id;
+            let lname = data4[i].employeeId.lastName;
+            console.log(lname);
+            let id = data4[i].employeeId.id;
+            console.log(id);
 
             nameArray[i] = fname + " " + lname;
             
@@ -131,202 +293,24 @@
 
           select.addEventListener('change', event => {
 
-            for (let i = 0; i < 40; i++) {
-    var x = document.getElementById("train");
-    x.remove(x.selectedIndex);
-            }
-            for (let i = 0; i < 40; i++) {
-    var x = document.getElementById("data");
-    x.remove(x.selectedIndex);
-  }
-
-  var selector = document.getElementById('names');
+ 
+            var selector = document.getElementById('names');
     var val = selector.options[selector.selectedIndex].value;
 
-  const option3 = document.createElement('option');
-  option3.innerText = "- Select a Catagory -";
-  select2.appendChild(option3);
-
-  const option4 = document.createElement('option');
-  option4.innerText = "Training";
-
-  select2.appendChild(option4);
-
-  const option5 = document.createElement('option');
-  option5.innerText = "Employee";
-  option5.value = val;
-  select2.appendChild(option5);
-
-  const option7 = document.createElement('option');
-  option7.innerText = "Management";
-
-  select2.appendChild(option7);
-
-  const option8 = document.createElement('option');
-  option8.innerText = "Grading";
-
-  select2.appendChild(option8);
-
-});
-
-
-
-
-
-select2.addEventListener('change', event => {
-
  
-     
-    var selector = document.getElementById('names');
-    var val = selector.options[selector.selectedIndex].value;
-    var val2 = document.getElementById("data").selectedIndex;
+    const element = document.getElementById("top");
 
- 
 
-    if(val2 == 1){
-   
-    const TRAININGbyE_URL = 'http://localhost:7000/trainings2/' + val;
-        
-    fetch(TRAININGbyE_URL).then(res => {
-            return res.json();
-          }).then(data2 => {
-
-   
-            
-               const option10 = document.createElement('option');
-               option10.innerText = "- Select a Training -";
-               select3.appendChild(option10);
-               for (let i = 0; i < data2.length; i++) {
-                 const option11 = document.createElement('option');
-                 option11.value = data2[i].id;
-                 option11.innerText = "Training Number " + (i+1);
-                 select3.appendChild(option11);
-                 
-               }
-                           
-          });
-    } else{
-        for (let i = 0; i < 40; i++) {
-    var x = document.getElementById("train");
-    x.remove(x.selectedIndex);
-  }
-
-    }
-
- 
-    const element = document.getElementById("login"); 
-    
-    console.log("test1");
-
-    switch (val2) {
-
-  case 1:
-
-  while (element.firstChild) {
+    while (element.firstChild) {
     element.removeChild(element.lastChild);
   }
-
-  select3.addEventListener('change', event => {
-    console.log("test2");
-  selector2 = document.getElementById('train');
-  val3 = selector2.options[selector2.selectedIndex].value;
-  valdrop = document.getElementById("train").selectedIndex;
-  val4 = valdrop -1;
-
-  
-  const URL2 = 'http://localhost:7000/trainings2/' + val;
-  fetch(URL2).then(res => {
-            return res.json();
-          }).then(data3 => {
-            console.log(val4);
-            console.log(data3);
-            var ms = data3[val4].eventId.datefiled;
-            var utcSeconds = new Date(1000*Math.round(ms/1000));
-            
-
-
-    const para1 = document.createElement("h3");
-const node1 = document.createTextNode("Employee Training");
-para1.appendChild(node1);
-element.appendChild(para1);
-
-const tt1 = document.createElement("p");
-const nn1 = document.createTextNode("date filed " + utcSeconds);
-tt1.appendChild(nn1);
-element.appendChild(tt1);
-
-const tt2 = document.createElement("p");
-const nn2 = document.createTextNode("training start date " + data3[val4].eventId.dateOfStart);
-tt2.appendChild(nn2);
-element.appendChild(tt2);
-
-const tt3 = document.createElement("p");
-const nn3 = document.createTextNode("training description " + data3[val4].eventId.description);
-tt3.appendChild(nn3);
-element.appendChild(tt3);
-
-const tt4 = document.createElement("p");
-const nn4 = document.createTextNode("training location " + data3[val4].eventId.location);
-tt4.appendChild(nn4);
-element.appendChild(tt4);
-
-const tt5 = document.createElement("p");
-const nn5 = document.createTextNode("training type " + data3[val4].eventId.type);
-tt5.appendChild(nn5);
-element.appendChild(tt5);
-
-const tt6 = document.createElement("p");
-const nn6 = document.createTextNode("work missed by training " + data3[val4].eventId.workMissed);
-tt6.appendChild(nn6);
-element.appendChild(tt6);
-
-const tt7 = document.createElement("p");
-const nn7 = document.createTextNode("cancelled by employee " + data3[val4].cancelledByEmployee);
-tt7.appendChild(nn7);
-element.appendChild(tt7);
-
-
-const tt8 = document.createElement("label");
-const nn8 = document.createTextNode("denied by reason");
-tt8.appendChild(nn8);
-element.appendChild(tt8);
-const tt9 = document.createElement("textarea");
-const nn9 = document.createTextNode(data3[val4].deniedByDSReason);
-tt9.appendChild(nn9);
-element.appendChild(tt9);
-
-const tt10 = document.createElement("label");
-const nn10 = document.createTextNode("denied by reason");
-tt10.appendChild(nn10);
-element.appendChild(tt10);
-const tt11 = document.createElement("textarea");
-const nn11 = document.createTextNode(data3[val4].deniedByDSReason);
-tt11.appendChild(nn11);
-element.appendChild(tt11);
-
-const tt12 = document.createElement("label");
-const nn12 = document.createTextNode("denied by reason");
-tt12.appendChild(nn12);
-element.appendChild(tt12);
-const tt13 = document.createElement("textarea");
-const nn13 = document.createTextNode(data3[val4].deniedByDSReason);
-tt13.appendChild(nn13);
-element.appendChild(tt13);
-
-});
-  });
-    break;
-
-
-
-
-
-
-  case 2:
-  while (element.firstChild) {
-    element.removeChild(element.lastChild);
+  while (elementLeft.firstChild) {
+    elementLeft.removeChild(elementLeft.lastChild);
   }
-  const URL = 'http://localhost:7000/employees/' + val;
+
+
+
+    const URL = 'http://localhost:7000/employees/' + val;
   fetch(URL).then(res => {
             return res.json();
           }).then(data => {
@@ -367,31 +351,160 @@ element.appendChild(tr7);
 
 
 });
-    break;
-  case 3:
-  while (element.firstChild) {
-    element.removeChild(element.lastChild);
-  }
-  const para4 = document.createElement("h3");
-const node4 = document.createTextNode("Employee Management");
-para4.appendChild(node4);
-element.appendChild(para4);
 
 
-    break;
-  case 4:
-  while (element.firstChild) {
-    element.removeChild(element.lastChild);
-  }
-  const para5 = document.createElement("h3");
-const node5 = document.createTextNode("Employee Grading");
-para5.appendChild(node5);
-element.appendChild(para5);
 
-}
-
-    
-}); 
  
+    const URL2 = 'http://localhost:7000/trainings2/' + val;
+  fetch(URL2).then(res => {
+            return res.json();
+          }).then(data3 => {
+
+
+            
+            for (let i = 0; i < data3.length; i++) {
+            trainid = data3[i].id;
+
+            var ms = data3[i].eventId.datefiled;
+            var utcSeconds = new Date(ms);
+            
+              console.log(data3);
+
+    const para1 = document.createElement("h3");
+const node1 = document.createTextNode("Employee Training");
+para1.appendChild(node1);
+element.appendChild(para1);
+
+const tt1 = document.createElement("p");
+const nn1 = document.createTextNode("date filed ---->" + utcSeconds);
+tt1.appendChild(nn1);
+element.appendChild(tt1);
+
+const tt2 = document.createElement("p");
+const nn2 = document.createTextNode("training start date ---->" + data3[i].eventId.dateOfStart);
+tt2.appendChild(nn2);
+element.appendChild(tt2);
+
+const tt3 = document.createElement("p");
+const nn3 = document.createTextNode("training description ---->" + data3[i].eventId.description);
+tt3.appendChild(nn3);
+element.appendChild(tt3);
+
+const tt4 = document.createElement("p");
+const nn4 = document.createTextNode("training location ---->" + data3[i].eventId.location);
+tt4.appendChild(nn4);
+element.appendChild(tt4);
+
+const tt5 = document.createElement("p");
+const nn5 = document.createTextNode("training type ---->" + data3[i].eventId.type);
+tt5.appendChild(nn5);
+element.appendChild(tt5);
+
+const tt6 = document.createElement("p");
+const nn6 = document.createTextNode("work missed by training ---->" + data3[i].eventId.workMissed);
+tt6.appendChild(nn6);
+element.appendChild(tt6);
+
+const tt7 = document.createElement("p");
+const nn7 = document.createTextNode("cancelled by employee ---->" + data3[i].cancelledByEmployee);
+tt7.appendChild(nn7);
+element.appendChild(tt7);
+
+
+const tt8 = document.createElement("label");
+const nn8 = document.createTextNode("denied by reason");
+tt8.appendChild(nn8);
+element.appendChild(tt8);
+const tt9 = document.createElement("textarea");
+tt9.setAttribute("id", "dbr");
+tt9.setAttribute("style", "display:block;");
+const nn9 = document.createTextNode(data3[i].deniedByReason);
+tt9.appendChild(nn9);
+element.appendChild(tt9);
+
+const tt10 = document.createElement("label");
+const nn10 = document.createTextNode("additional info");
+tt10.appendChild(nn10);
+element.appendChild(tt10);
+const tt11 = document.createElement("textarea");
+tt11.setAttribute("id", "ai");
+tt11.setAttribute("style", "display:block;");
+const nn11 = document.createTextNode(data3[i].additionalInfo);
+tt11.appendChild(nn11);
+element.appendChild(tt11);
+
+
+
+
+const checkApprove = document.createElement("h3");
+const a1 = document.createTextNode("Training Approved by DS ->" + data3[i].approvedByDS);
+checkApprove.appendChild(a1);
+checkApprove.setAttribute("style", "display:block;");
+elementLeft.appendChild(checkApprove);
+
+
+const checkDeny = document.createElement("h3");
+const b1 = document.createTextNode("Training Denyed by DS ->" + data3[i].deniedByDS);
+checkDeny.setAttribute("style", "display:block;");
+checkDeny.appendChild(b1);
+elementLeft.appendChild(checkDeny);
+
+const checkApprove2 = document.createElement("h3");
+const a2 = document.createTextNode("\n Training Approved by DH ->" + data3[i].approvedByDH);
+checkApprove2.setAttribute("style", "display:block;");
+checkApprove2.appendChild(a2);
+elementLeft.appendChild(checkApprove2);
+
+const checkDeny2 = document.createElement("h3");
+const b2 = document.createTextNode("Training Denyed by DH ->" + data3[i].deniedByDH);
+checkDeny2.setAttribute("style", "display:block;");
+checkDeny.appendChild(b2);
+elementLeft.appendChild(checkDeny2);
+
+const checkApprove3 = document.createElement("h3");
+const a3 = document.createTextNode("Training Approved by BC ->" + data3[i].approvedByBC);
+checkApprove3.setAttribute("style", "display:block;");
+checkApprove3.appendChild(a3);
+elementLeft.appendChild(checkApprove3);
+
+const checkDeny3 = document.createElement("h3");
+const b3 = document.createTextNode("Training Denyed by BC ->" + data3[i].deniedByBC);
+checkDeny3.setAttribute("style", "display:block;");
+checkDeny.appendChild(b3);
+elementLeft.appendChild(checkDeny3);
+
+
+
+
+const input1 = document.createElement("input");
+input1.setAttribute("value", "DENY/SUBMIT");
+input1.setAttribute("type", "submit");
+input1.setAttribute("id", "ds");
+input1.onclick = function(){sub1(1,trainid);};
+
+
+
+
+const input2 = document.createElement("input");
+input2.setAttribute("value", "APPROVE");
+input2.setAttribute("type", "submit");
+input2.setAttribute("id", "a");
+input2.onclick = function(){sub1(2,trainid);};
+
+
+element.appendChild(input1);
+element.appendChild(input2);
+
+
+
+
+
+
+            }
+          });
+
+
+
+});
         </script>
 </html>

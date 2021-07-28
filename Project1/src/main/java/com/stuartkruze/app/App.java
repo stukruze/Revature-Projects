@@ -124,14 +124,14 @@ public class App {
 		gr.addGrading(gr1);
 		Event ev1 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "Rutgers University","cloud computing", "need it", "none", gr1);
 		evr.addEvent(ev1);
-		Training tra1 = new Training(false, false, false, false, 0, null, null, null, null, null, null, null, false, ev1, mm2, em2);
+		Training tra1 = new Training(false, false, false, false, false, false, false, 0, "", false, "", ev1, mm2, em2);
 		tr.addTraining(tra1);
 		
 		Grading gr3 = new Grading();
 		gr.addGrading(gr3);
 		Event ev3 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "NJIT","PHP programming", "want it", "none", gr3);
 		evr.addEvent(ev3);
-		Training tra3 = new Training(false, false, false, false, 0, null, null, null, null, null, null, null, false, ev3, mm1, em1);
+		Training tra3 = new Training(false, false, false, false, false, false, false, 0, "", false, "", ev3, mm1, em1);
 		tr.addTraining(tra3);
 		
 		

@@ -26,24 +26,22 @@ public class Training {
 	private boolean approvedByDH;
 	@Column(name="approved_by_BC")
 	private boolean approvedByBC;
+	@Column(name="denied_by_DS")
+	private boolean deniedByDS;
+	@Column(name="denied_by_DH")
+	private boolean deniedByDH;
+	@Column(name="denied_by_BC")
+	private boolean deniedByBC;
 	@Column(name="awardedReimbursment")
 	private double awardedReimbursment;
-	@Column(name="event_attachment_URL")
-	private String eventAttachmentURL;
-	@Column(name="approval_attachment_URL")
-	private String approvalAttachmentURL;
-	@Column(name="type_of_approval")
-	private String typeOfApproval;
-	@Column(name="additional_info_DS")
-	private String additionalInfoDS;
-	@Column(name="additional_info_DH")
-	private String additionalInfoDH;
-	@Column(name="additional_info_BC")
-	private String additionalInfoBC;
 	@Column(name="denied_by_reason")
-	private String deniedByDSReason;
+	private String deniedByReason;
 	@Column(name="cancelled_by_employee")
-	private boolean cancelledByEmployee;	
+	private boolean cancelledByEmployee;
+	@Column(name="additional_info")
+	private String additionalInfo;
+	
+	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="event_id")
@@ -62,47 +60,43 @@ public class Training {
 	}
 
 	public Training(int id, boolean approvedByGrade, boolean approvedByDS, boolean approvedByDH, boolean approvedByBC,
-			double awardedReimbursment, String eventAttachmentURL, String approvalAttachmentURL, String typeOfApproval,
-			String additionalInfoDS, String additionalInfoDH, String additionalInfoBC, String deniedByDSReason,
-			boolean cancelledByEmployee, Event eventId, Management managementId, Employee employeeId) {
+			boolean deniedByDS, boolean deniedByDH, boolean deniedByBC, double awardedReimbursment,
+			String deniedByReason, boolean cancelledByEmployee, String additionalInfo, Event eventId,
+			Management managementId, Employee employeeId) {
 		super();
 		this.id = id;
 		this.approvedByGrade = approvedByGrade;
 		this.approvedByDS = approvedByDS;
 		this.approvedByDH = approvedByDH;
 		this.approvedByBC = approvedByBC;
+		this.deniedByDS = deniedByDS;
+		this.deniedByDH = deniedByDH;
+		this.deniedByBC = deniedByBC;
 		this.awardedReimbursment = awardedReimbursment;
-		this.eventAttachmentURL = eventAttachmentURL;
-		this.approvalAttachmentURL = approvalAttachmentURL;
-		this.typeOfApproval = typeOfApproval;
-		this.additionalInfoDS = additionalInfoDS;
-		this.additionalInfoDH = additionalInfoDH;
-		this.additionalInfoBC = additionalInfoBC;
-		this.deniedByDSReason = deniedByDSReason;
+		this.deniedByReason = deniedByReason;
 		this.cancelledByEmployee = cancelledByEmployee;
+		this.additionalInfo = additionalInfo;
 		this.eventId = eventId;
 		this.managementId = managementId;
 		this.employeeId = employeeId;
 	}
 
 	public Training(boolean approvedByGrade, boolean approvedByDS, boolean approvedByDH, boolean approvedByBC,
-			double awardedReimbursment, String eventAttachmentURL, String approvalAttachmentURL, String typeOfApproval,
-			String additionalInfoDS, String additionalInfoDH, String additionalInfoBC, String deniedByDSReason,
-			boolean cancelledByEmployee, Event eventId, Management managementId, Employee employeeId) {
+			boolean deniedByDS, boolean deniedByDH, boolean deniedByBC, double awardedReimbursment,
+			String deniedByReason, boolean cancelledByEmployee, String additionalInfo, Event eventId,
+			Management managementId, Employee employeeId) {
 		super();
 		this.approvedByGrade = approvedByGrade;
 		this.approvedByDS = approvedByDS;
 		this.approvedByDH = approvedByDH;
 		this.approvedByBC = approvedByBC;
+		this.deniedByDS = deniedByDS;
+		this.deniedByDH = deniedByDH;
+		this.deniedByBC = deniedByBC;
 		this.awardedReimbursment = awardedReimbursment;
-		this.eventAttachmentURL = eventAttachmentURL;
-		this.approvalAttachmentURL = approvalAttachmentURL;
-		this.typeOfApproval = typeOfApproval;
-		this.additionalInfoDS = additionalInfoDS;
-		this.additionalInfoDH = additionalInfoDH;
-		this.additionalInfoBC = additionalInfoBC;
-		this.deniedByDSReason = deniedByDSReason;
+		this.deniedByReason = deniedByReason;
 		this.cancelledByEmployee = cancelledByEmployee;
+		this.additionalInfo = additionalInfo;
 		this.eventId = eventId;
 		this.managementId = managementId;
 		this.employeeId = employeeId;
@@ -148,6 +142,30 @@ public class Training {
 		this.approvedByBC = approvedByBC;
 	}
 
+	public boolean isDeniedByDS() {
+		return deniedByDS;
+	}
+
+	public void setDeniedByDS(boolean deniedByDS) {
+		this.deniedByDS = deniedByDS;
+	}
+
+	public boolean isDeniedByDH() {
+		return deniedByDH;
+	}
+
+	public void setDeniedByDH(boolean deniedByDH) {
+		this.deniedByDH = deniedByDH;
+	}
+
+	public boolean isDeniedByBC() {
+		return deniedByBC;
+	}
+
+	public void setDeniedByBC(boolean deniedByBC) {
+		this.deniedByBC = deniedByBC;
+	}
+
 	public double getAwardedReimbursment() {
 		return awardedReimbursment;
 	}
@@ -156,60 +174,12 @@ public class Training {
 		this.awardedReimbursment = awardedReimbursment;
 	}
 
-	public String getEventAttachmentURL() {
-		return eventAttachmentURL;
+	public String getdeniedByReason() {
+		return deniedByReason;
 	}
 
-	public void setEventAttachmentURL(String eventAttachmentURL) {
-		this.eventAttachmentURL = eventAttachmentURL;
-	}
-
-	public String getApprovalAttachmentURL() {
-		return approvalAttachmentURL;
-	}
-
-	public void setApprovalAttachmentURL(String approvalAttachmentURL) {
-		this.approvalAttachmentURL = approvalAttachmentURL;
-	}
-
-	public String getTypeOfApproval() {
-		return typeOfApproval;
-	}
-
-	public void setTypeOfApproval(String typeOfApproval) {
-		this.typeOfApproval = typeOfApproval;
-	}
-
-	public String getAdditionalInfoDS() {
-		return additionalInfoDS;
-	}
-
-	public void setAdditionalInfoDS(String additionalInfoDS) {
-		this.additionalInfoDS = additionalInfoDS;
-	}
-
-	public String getAdditionalInfoDH() {
-		return additionalInfoDH;
-	}
-
-	public void setAdditionalInfoDH(String additionalInfoDH) {
-		this.additionalInfoDH = additionalInfoDH;
-	}
-
-	public String getAdditionalInfoBC() {
-		return additionalInfoBC;
-	}
-
-	public void setAdditionalInfoBC(String additionalInfoBC) {
-		this.additionalInfoBC = additionalInfoBC;
-	}
-
-	public String getDeniedByDSReason() {
-		return deniedByDSReason;
-	}
-
-	public void setDeniedByDSReason(String deniedByDSReason) {
-		this.deniedByDSReason = deniedByDSReason;
+	public void setdeniedByReason(String deniedByReason) {
+		this.deniedByReason = deniedByReason;
 	}
 
 	public boolean isCancelledByEmployee() {
@@ -218,6 +188,14 @@ public class Training {
 
 	public void setCancelledByEmployee(boolean cancelledByEmployee) {
 		this.cancelledByEmployee = cancelledByEmployee;
+	}
+
+	public String getAdditionalInfo() {
+		return additionalInfo;
+	}
+
+	public void setAdditionalInfo(String additionalInfo) {
+		this.additionalInfo = additionalInfo;
 	}
 
 	public Event getEventId() {
@@ -247,14 +225,12 @@ public class Training {
 	@Override
 	public String toString() {
 		return "Training [id=" + id + ", approvedByGrade=" + approvedByGrade + ", approvedByDS=" + approvedByDS
-				+ ", approvedByDH=" + approvedByDH + ", approvedByBC=" + approvedByBC + ", awardedReimbursment="
-				+ awardedReimbursment + ", eventAttachmentURL=" + eventAttachmentURL + ", approvalAttachmentURL="
-				+ approvalAttachmentURL + ", typeOfApproval=" + typeOfApproval + ", additionalInfoDS="
-				+ additionalInfoDS + ", additionalInfoDH=" + additionalInfoDH + ", additionalInfoBC=" + additionalInfoBC
-				+ ", deniedByDSReason=" + deniedByDSReason + ", cancelledByEmployee=" + cancelledByEmployee
-				+ ", eventId=" + eventId + ", managementId=" + managementId + ", employeeId=" + employeeId + "]";
+				+ ", approvedByDH=" + approvedByDH + ", approvedByBC=" + approvedByBC + ", deniedByDS=" + deniedByDS
+				+ ", deniedByDH=" + deniedByDH + ", deniedByBC=" + deniedByBC + ", awardedReimbursment="
+				+ awardedReimbursment + ", deniedByReason=" + deniedByReason + ", cancelledByEmployee="
+				+ cancelledByEmployee + ", additionalInfo=" + additionalInfo + ", eventId=" + eventId
+				+ ", managementId=" + managementId + ", employeeId=" + employeeId + "]";
 	}
-
 
 
 

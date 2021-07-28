@@ -37,6 +37,7 @@ xhr.onreadystatechange = function () {
         let resp = JSON.parse(this.responseText);
 
         let id = resp.managmentId;
+        
         localStorage.setItem('id', resp.id);
         if(resp != null){
             if(id != null){
@@ -75,7 +76,7 @@ xhr.send();
 
   <div class="wrapper">
   <div class="left">
-      <h1>Tuition Reimbursement Management System</h1>   
+      <h1 id="yup">Tuition Reimbursement Management System</h1>   
       
       
   </div>
