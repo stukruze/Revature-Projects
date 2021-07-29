@@ -56,6 +56,17 @@ body {
     
 }
 
+#comeon {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    letter-spacing: 3px;
+ 
+    
+}
+
 .wrapper .right {
     background: white;
 }

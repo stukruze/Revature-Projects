@@ -39,6 +39,7 @@ xhr.onreadystatechange = function () {
         let id = resp.managmentId;
         
         localStorage.setItem('id', resp.id);
+        if(user == resp.email && pass == resp.password){
         if(resp != null){
             if(id != null){
                 window.location.href = 'management.html';  
@@ -49,7 +50,7 @@ xhr.onreadystatechange = function () {
         else{
             document.getElementById("error").style.display = "block";
         }
-
+    }
     }
 };
 

@@ -29,6 +29,7 @@
         </div>
             <ul class="nav-links">
                 <li><a href="employee.html">Tuition Reimbursement</a></li>
+                <li><a href="result.html">Pending/Completed</a></li>
                 <li><a href="contact.html">Contact Information</a></li>
                 <li><a href="login.html">Log in</a></li>
                 
@@ -123,7 +124,7 @@ fetch(url).then(res => {
             obj3 = data.managmentId;
 
 
-let xhttp20 = new XMLHttpRequest();
+xhttp20 = new XMLHttpRequest();
 
 xhttp20.onreadystatechange = function () {
 
@@ -163,6 +164,10 @@ deniedByDH = data.deniedByDH;
 deniedByBC = data.deniedByBC;
 awardedReimbursment = data.awardedReimbursment;
 cancelledByEmployee = data.cancelledByEmployee;
+insufficient = data.insufficient;
+percent = data.percent;
+awarded = data.awarded;
+adjusted = data.adjusted;
 
 if(position == "Direct Supervisor" && departmenthead != true && AorD == 2){
   approvedByDS = true;
@@ -174,12 +179,18 @@ approvedByGrade: approvedByGrade,
 deniedByDS: deniedByDS,
 deniedByDH: deniedByDH,
 deniedByBC: deniedByBC,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
 awardedReimbursment: awardedReimbursment,
 cancelledByEmployee: cancelledByEmployee,
 employeeId: obj1,
 eventId: obj2,
 managmentId: obj3
+
 }
+xhttp20.send(JSON.stringify(reasonObject));
 }
 
 if(position == "Direct Supervisor" && departmenthead == true && AorD == 2){
@@ -188,7 +199,6 @@ if(position == "Direct Supervisor" && departmenthead == true && AorD == 2){
 
 approvedByDS = true;
 approvedByDH = true;
-alert(approvedByDS);
   reasonObject = {
 deniedByReason: reason,
 additionalInfo: ai,
@@ -198,38 +208,115 @@ approvedByGrade: approvedByGrade,
 deniedByDS: deniedByDS,
 deniedByDH: deniedByDH,
 deniedByBC: deniedByBC,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
 awardedReimbursment: awardedReimbursment,
 cancelledByEmployee: cancelledByEmployee,
 employeeId: obj1,
 eventId: obj2,
 managmentId: obj3
 }
+xhttp20.send(JSON.stringify(reasonObject));
 }
 
-if(position == "Benefits Coordinator" && AorD == 2 && approvedByDS == "true" && approvedByDH == "true"){
+if(position == "Benefits Coordinator" && AorD == 2 && approvedByDS == true && approvedByDH == true){
   
-  approvedByBC = true;
+
+const URL2 = "http://localhost:7000/compute/" + trainId;
+fetch(URL2).then(res => {
+            return res.json();
+          }).then(data => {
+
+            alert("A Reimbursement has Been Awarded");
+
+          });
+}
+
+
+if(position == "Direct Supervisor" && departmenthead != true && AorD == 1){
+  deniedByDS = true;
   reasonObject = {
 deniedByReason: reason,
 additionalInfo: ai,
-approvedByBC: approvedByBC,
+approvedByDS: approvedByDS,
 approvedByGrade: approvedByGrade,
 deniedByDS: deniedByDS,
 deniedByDH: deniedByDH,
 deniedByBC: deniedByBC,
-awardedReimbursment: data.awardedReimbursment,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
+awardedReimbursment: awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+
+}
+xhttp20.send(JSON.stringify(reasonObject));
+}
+
+if(position == "Direct Supervisor" && departmenthead == true && AorD == 1){
+  
+
+
+deniedByDH = true;
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByDS: approvedByDS,
+approvedByDH: approvedByDH,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
+awardedReimbursment: awardedReimbursment,
 cancelledByEmployee: cancelledByEmployee,
 employeeId: obj1,
 eventId: obj2,
 managmentId: obj3
 }
+xhttp20.send(JSON.stringify(reasonObject));
+}
+
+if(position == "Benefits Coordinator" && AorD == 1){
+  
+  deniedByBC = true;
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByDS: approvedByDS,
+approvedByDH: approvedByDH,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
+awardedReimbursment: awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+}
+xhttp20.send(JSON.stringify(reasonObject));
+
 }
 
 
 
 
 
-xhttp20.send(JSON.stringify(reasonObject));
+
 });
 }
 
@@ -304,9 +391,7 @@ const nameArray = [];
     while (element.firstChild) {
     element.removeChild(element.lastChild);
   }
-  while (elementLeft.firstChild) {
-    elementLeft.removeChild(elementLeft.lastChild);
-  }
+
 
 
 
@@ -353,7 +438,7 @@ element.appendChild(tr7);
 });
 
 
-
+function pop(){
  
     const URL2 = 'http://localhost:7000/trainings2/' + val;
   fetch(URL2).then(res => {
@@ -369,6 +454,10 @@ element.appendChild(tr7);
             var utcSeconds = new Date(ms);
             
               console.log(data3);
+
+              while (element.firstChild) {
+    element.removeChild(element.lastChild);
+  }
 
     const para1 = document.createElement("h3");
 const node1 = document.createTextNode("Employee Training");
@@ -410,6 +499,11 @@ const nn7 = document.createTextNode("cancelled by employee ---->" + data3[i].can
 tt7.appendChild(nn7);
 element.appendChild(tt7);
 
+const tt17 = document.createElement("p");
+const nn17 = document.createTextNode("Final Grade ---->" + data3[i].Grade);
+tt17.appendChild(nn17);
+element.appendChild(tt17);
+
 
 const tt8 = document.createElement("label");
 const nn8 = document.createTextNode("denied by reason");
@@ -436,42 +530,49 @@ element.appendChild(tt11);
 
 
 
+
+while (elementLeft.firstChild) {
+    elementLeft.removeChild(elementLeft.lastChild);
+  }
+
 const checkApprove = document.createElement("h3");
 const a1 = document.createTextNode("Training Approved by DS ->" + data3[i].approvedByDS);
 checkApprove.appendChild(a1);
-checkApprove.setAttribute("style", "display:block;");
+checkApprove.setAttribute("style", "white-space: nowrap;");
 elementLeft.appendChild(checkApprove);
 
 
 const checkDeny = document.createElement("h3");
 const b1 = document.createTextNode("Training Denyed by DS ->" + data3[i].deniedByDS);
-checkDeny.setAttribute("style", "display:block;");
+checkDeny.setAttribute("style", "white-space: nowrap;");
 checkDeny.appendChild(b1);
 elementLeft.appendChild(checkDeny);
 
 const checkApprove2 = document.createElement("h3");
-const a2 = document.createTextNode("\n Training Approved by DH ->" + data3[i].approvedByDH);
-checkApprove2.setAttribute("style", "display:block;");
+const a2 = document.createTextNode("Training Approved by DH ->" + data3[i].approvedByDH);
+checkApprove2.setAttribute("style", "white-space: nowrap;");
 checkApprove2.appendChild(a2);
 elementLeft.appendChild(checkApprove2);
 
 const checkDeny2 = document.createElement("h3");
 const b2 = document.createTextNode("Training Denyed by DH ->" + data3[i].deniedByDH);
-checkDeny2.setAttribute("style", "display:block;");
-checkDeny.appendChild(b2);
+checkDeny2.setAttribute("style", "white-space: nowrap;");
+checkDeny2.appendChild(b2);
 elementLeft.appendChild(checkDeny2);
 
 const checkApprove3 = document.createElement("h3");
 const a3 = document.createTextNode("Training Approved by BC ->" + data3[i].approvedByBC);
-checkApprove3.setAttribute("style", "display:block;");
+checkApprove3.setAttribute("style", "white-space: nowrap;");
 checkApprove3.appendChild(a3);
 elementLeft.appendChild(checkApprove3);
 
 const checkDeny3 = document.createElement("h3");
 const b3 = document.createTextNode("Training Denyed by BC ->" + data3[i].deniedByBC);
-checkDeny3.setAttribute("style", "display:block;");
-checkDeny.appendChild(b3);
+checkDeny3.setAttribute("style", "white-space: nowrap;");
+checkDeny3.appendChild(b3);
 elementLeft.appendChild(checkDeny3);
+
+
 
 
 
@@ -480,7 +581,7 @@ const input1 = document.createElement("input");
 input1.setAttribute("value", "DENY/SUBMIT");
 input1.setAttribute("type", "submit");
 input1.setAttribute("id", "ds");
-input1.onclick = function(){sub1(1,trainid);};
+input1.onclick = function(){sub1(1,trainid);setTimeout(function(){ pop(); }, 1000);};
 
 
 
@@ -489,7 +590,7 @@ const input2 = document.createElement("input");
 input2.setAttribute("value", "APPROVE");
 input2.setAttribute("type", "submit");
 input2.setAttribute("id", "a");
-input2.onclick = function(){sub1(2,trainid);};
+input2.onclick = function(){sub1(2,trainid);setTimeout(function(){ pop(); }, 1000);};
 
 
 element.appendChild(input1);
@@ -501,10 +602,17 @@ element.appendChild(input2);
 
 
             }
-          });
 
+          
+          });
+        }
+
+        pop();
 
 
 });
+
+
+
         </script>
 </html>

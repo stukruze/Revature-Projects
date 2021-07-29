@@ -2,11 +2,11 @@ package com.stuartkruze.repositories;
 
 import java.util.List;
 
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.stuartkruze.models.Employee;
 import com.stuartkruze.models.Training;
 import com.stuartkruze.util.HibernateUtil;
 
@@ -30,6 +30,27 @@ public class TrainingRepoImpl implements TrainingRepo {
 		}
 		
 		return t;
+	}
+	
+	@Override
+	public Training addResult(Training change) {
+		
+		Session sess = HibernateUtil.getSession();
+		Transaction tx = null;
+		
+		try {
+			tx = sess.beginTransaction();
+			sess.update(change);
+			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+			return null;
+		} finally {
+			sess.close();
+		}
+		
+		return change;
 	}
 
 	@SuppressWarnings("unchecked")

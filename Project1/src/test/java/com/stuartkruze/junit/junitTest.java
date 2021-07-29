@@ -70,7 +70,7 @@ public class junitTest {
 	ManagementController mc = new ManagementController(ms);
 
 	TrainingRepo tr = new TrainingRepoImpl();
-	TrainingServiceImpl ts = new TrainingServiceImpl(tr);
+	TrainingServiceImpl ts = new TrainingServiceImpl(tr, emr);
 	TrainingController tc = new TrainingController(ts);
 	
 	@BeforeClass

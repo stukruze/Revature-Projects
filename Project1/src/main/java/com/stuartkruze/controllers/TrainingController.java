@@ -2,18 +2,22 @@ package com.stuartkruze.controllers;
 
 import java.util.List;
 
+
+import org.apache.log4j.Logger;
+
 import com.google.gson.Gson;
-import com.stuartkruze.models.Employee;
 import com.stuartkruze.models.Training;
 import com.stuartkruze.services.TrainingService;
 
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
+
 public class TrainingController {
 
 	Gson gson = new Gson();
 	TrainingService ts;
+	final static Logger log = Logger.getLogger(TrainingController.class);
 
 	// Please don't ever actually skip the Service layer.
 	public TrainingController(TrainingService ts) {
@@ -32,6 +36,24 @@ public class TrainingController {
 		Training t = ts.getTraining(id);
 
 		populateResult(context, t);
+	};
+	
+	public Handler computeT = (context) -> {
+
+		String input = context.pathParam("id");
+		int id;
+		
+		try {
+			id = Integer.parseInt(input);
+		} catch (NumberFormatException e) {
+			id = -1;
+		}
+		log.error(id);
+		Training t = ts.computeT(id);
+		System.out.println(t);
+		
+		context.result(gson.toJson(t));
+		System.out.println(context);
 	};
 	
 	public Handler getTrainingsByEmployeeId = (context) -> {

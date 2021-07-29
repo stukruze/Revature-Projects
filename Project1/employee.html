@@ -17,8 +17,7 @@
     <title>Tuition Reimbursement Management System</title>
 
 <script>
-    let epoc = new Date().getTime();
-    epoc = JSON.stringify(epoc);
+    let epoc = new Date().toISOString().slice(0, 10);
     const cat = localStorage.getItem('id');
     let something = 0;
 
@@ -101,7 +100,8 @@ xhttp.open("POST", url, true);
 xhttp.setRequestHeader('Content-Type', 'application/json');
 
 
-
+deniedByReason = "";
+additionalInfo = "";
 
 let grading = {
 
@@ -116,7 +116,8 @@ location: location,
 description: desc,
 justification: just,
 gradingId: grading,
-workMissed: work
+workMissed: work,
+
 }
 
 
@@ -134,6 +135,8 @@ doStuff();
 
 function work2(){
 let training = {
+additionalInfo: additionalInfo,
+deniedByReason: deniedByReason,
 eventId: event,
 employeeId: employee,
 managementId: management
@@ -165,6 +168,7 @@ xhttp.send(JSON.stringify(training));
         </div>
             <ul class="nav-links">
                 <li><a href="employee.html">Tuition Reimbursement</a></li>
+                <li><a href="result.html">Pending/Completed</a></li>
                 <li><a href="contact.html">Contact Information</a></li>
                 <li><a href="login.html">Login</a></li>
                 
@@ -220,12 +224,12 @@ xhttp.send(JSON.stringify(training));
             <div class="input_field">
             <label for="types">Choose the type of Training</label>
             <select name="types" id="types">
-              <option value="univ">University Courses</option>
-              <option value="sem">Seminars</option>
-              <option value="cpc">Certification Preparation Classes</option>
-              <option value="cert">Certification</option>
-              <option value="tech">Technical Training</option>
-              <option value="other">Other</option>
+              <option value="University Course">University Course</option>
+              <option value="Seminars">Seminars</option>
+              <option value="Certification Preparation Class">Certification Preparation Class</option>
+              <option value="Certification">Certification</option>
+              <option value="Technical Training">Technical Training</option>
+              <option value="Other">Other</option>
             </select> 
             </div>
 

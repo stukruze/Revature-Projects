@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="log.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+            
+            </style>
+    
+        
+        <title>Tuition Reimbursement Management System</title>
+    
+     
+    
+    
+    </head>
+    <body>
+    
+        <nav>
+            <div class="logo">
+                
+                <img src="logo.png" alt="">
+            </div>
+                <ul class="nav-links">
+                    <li><a href="employee.html">Tuition Reimbursement</a></li>
+                    <li><a href="result.html">Pending/Completed</a></li>
+                    <li><a href="contact.html">Contact Information</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    
+                </ul>
+    
+        </nav>
+
+        <div class="wrapper">
+            <div class="left">
+                <h3 id="comeon">Your Pending and Awarded Reimbursements</h3>   
+                
+                
+            </div>
+            <div class="right">
+          
+              
+              <div class="signup">
+          
+              </div>
+              
+              <div class="login" id="login">
+          
+                      
+                  
+               
+              </div>
+
+          
+ 
+              
+            </div>
+          </div>
+          
+              <footer style="width:98.5%;">
+                  
+                      <div class="l-footer">
+                          <h3></h3>
+                          <p></p>
+                          
+          
+                      </div>
+                      <ul class="r-footer">
+                      <br />
+                          <p></p>                 
+                          <!--<li><p></p></li>-->
+                      </ul>
+          
+                  </div>
+              </footer>
+    <script>
+
+const idLS = localStorage.getItem('id');
+const element = document.getElementById("login");
+
+
+function pop(){
+
+const TRAINING_URL = 'http://localhost:7000/trainings';
+fetch(TRAINING_URL).then(res => {
+            return res.json();
+          }).then(data4 => {
+
+            for (let i = 0; i < data4.length; i++) {
+            if(data4[i].employeeId.id == idLS){
+
+                
+                console.log(data4[i]);
+
+const tr = document.createElement("p");
+const nr = document.createTextNode("Your " + data4[i].eventId.type + " Training at " + data4[i].eventId.location);
+tr.setAttribute("style", "white-space: nowrap;");
+tr.appendChild(nr);
+element.appendChild(tr);
+
+if(data4[i].additionalInfo == ""){
+place = "none";
+} else{
+place = data4[i].additionalInfo;
+}
+
+const tr2 = document.createElement("p");
+const nr2 = document.createTextNode("Additional Information from Management ----> " + place);
+tr2.setAttribute("style", "white-space: nowrap;");
+tr2.appendChild(nr2);
+element.appendChild(tr2);
+                
+
+
+const checkApprove = document.createElement("p");
+const a1 = document.createTextNode("Training Approved by DS ----> " + data4[i].approvedByDS);
+checkApprove.appendChild(a1);
+checkApprove.setAttribute("style", "white-space: nowrap;");
+element.appendChild(checkApprove);
+
+
+const checkDeny = document.createElement("p");
+const b1 = document.createTextNode("Training Denyed by DS ----> " + data4[i].deniedByDS);
+checkDeny.setAttribute("style", "white-space: nowrap;");
+checkDeny.appendChild(b1);
+element.appendChild(checkDeny);
+
+const checkApprove2 = document.createElement("p");
+const a2 = document.createTextNode("Training Approved by DH ----> " + data4[i].approvedByDH);
+checkApprove2.setAttribute("style", "white-space: nowrap;");
+checkApprove2.appendChild(a2);
+element.appendChild(checkApprove2);
+
+const checkDeny2 = document.createElement("p");
+const b2 = document.createTextNode("Training Denyed by DH ----> " + data4[i].deniedByDH);
+checkDeny2.setAttribute("style", "white-space: nowrap;");
+checkDeny2.appendChild(b2);
+element.appendChild(checkDeny2);
+
+const checkApprove3 = document.createElement("p");
+const a3 = document.createTextNode("Training Approved by BC ----> " + data4[i].approvedByBC);
+checkApprove3.setAttribute("style", "white-space: nowrap;");
+checkApprove3.appendChild(a3);
+element.appendChild(checkApprove3);
+
+const checkDeny3 = document.createElement("p");
+const b3 = document.createTextNode("Training Denyed by BC ----> " + data4[i].deniedByBC);
+checkDeny3.setAttribute("style", "white-space: nowrap;");
+checkDeny3.appendChild(b3);
+element.appendChild(checkDeny3);
+
+
+if(data4[i].deniedByReason == ""){
+place2 = "none";
+} else{
+place2 = data4[i].deniedByReason;
+}
+
+const tr3 = document.createElement("p");
+const nr3 = document.createTextNode("Denied by Reason ----> " + place2);
+tr3.setAttribute("style", "white-space: nowrap;");
+tr3.appendChild(nr3);
+element.appendChild(tr3);
+
+
+
+if(data4[i].approvedByGrade == ""){
+place3 = "none";
+} else{
+place3 = data4[i].approvedByGrade;
+}
+
+const tr4 = document.createElement("p");
+const nr4 = document.createTextNode("Your current Grade Entered ----> " + place3);
+tr4.setAttribute("style", "white-space: nowrap;");
+tr4.appendChild(nr4);
+element.appendChild(tr4);
+
+
+
+const input2 = document.createElement("input");
+input2.setAttribute("type", "text");
+input2.setAttribute("id", "grade");
+element.appendChild(input2);
+
+const tr10 = document.createElement("label");
+const nr10 = document.createTextNode("Enter your Final Grade or type Presentation");
+tr11.setAttribute("for", input2);
+tr10.setAttribute("style", "white-space: nowrap;");
+tr10.appendChild(nr10);
+element.appendChild(tr10);
+
+if(data4[i].cancelledByEmployee == ""){
+place4 = "none";
+} else{
+place4 = data4[i].cancelledByEmployee;
+}
+
+const tr5 = document.createElement("p");
+const nr5 = document.createTextNode("Training Reimbursment Cancelled by you ----> " + place4);
+tr5.setAttribute("style", "white-space: nowrap;");
+tr5.appendChild(nr5);
+element.appendChild(tr5);
+
+
+
+const input3 = document.createElement("input");
+input3.setAttribute("type", "checkbox");
+input3.setAttribute("id", "cancel");
+element.appendChild(input3);
+
+const tr11 = document.createElement("label");
+const nr11 = document.createTextNode("Check if you would like to cancel your reimbursment");
+tr11.setAttribute("for", input3);
+tr11.setAttribute("style", "white-space: nowrap;");
+tr11.appendChild(nr11);
+element.appendChild(tr11);
+
+
+
+
+const input1 = document.createElement("input");
+input1.setAttribute("value", "SUBMIT");
+input1.setAttribute("type", "submit");
+input1.setAttribute("id", "ds");
+input1.onclick = function(){update()};
+
+
+
+const id = localStorage.getItem('id');
+const T_URL = 'http://localhost:7000/trainings/';
+const element = document.getElementById("login");
+
+
+fetch(T_URL).then(res => {
+            return res.json();
+          }).then(data => {
+
+        if(data.employeeId == id){
+            tid = data.id
+        }
+
+          });   
+
+
+reason = document.getElementById("dbr").value;
+ai = document.getElementById("ai").value;
+let url = "http://localhost:7000/trainings/" + tid;
+
+
+fetch(url).then(res => {
+            return res.json();
+          }).then(data => {
+
+            obj1 = data.employeeId;
+            obj2 = data.eventId;
+            obj3 = data.managmentId;
+
+
+xhttp20 = new XMLHttpRequest();
+
+xhttp20.onreadystatechange = function () {
+
+if (this.readyState == 4 && this.status == 200) {
+    
+
+    if (JSON.parse(this.responseText)) {
+        document.getElementById("success").innerHTML = " Completed"
+    } else {
+        document.getElementById("success").innerHTML = " Completed"
+    }
+} else if (this.readyState == 4) {
+    document.getElementById("success").innerHTML = "Request was not successfully processed!"
+}
+
+
+}
+
+          });
+
+
+xhttp20.open("PUT", url, true);
+
+
+if(position == "Direct Supervisor" && departmenthead != true && AorD == 2){
+    cancelledByEmployee = input2.value;
+    approvedByGrade = input3.value;
+  reasonObject = {
+deniedByReason: reason,
+additionalInfo: ai,
+approvedByDS: approvedByDS,
+approvedByGrade: approvedByGrade,
+deniedByDS: deniedByDS,
+deniedByDH: deniedByDH,
+deniedByBC: deniedByBC,
+insufficient: insufficient,
+percent: data.percent,
+awarded: data.awarded,
+adjusted: data.adjusted,
+awardedReimbursment: awardedReimbursment,
+cancelledByEmployee: cancelledByEmployee,
+employeeId: obj1,
+eventId: obj2,
+managmentId: obj3
+
+}
+xhttp20.send(JSON.stringify(reasonObject));
+}
+
+
+
+
+if(data4[i].approvedByBC == true){
+
+const tr4 = document.createElement("p");
+const nr4 = document.createTextNode("Funding Insufficent ----> " + data4[i].insufficient);
+tr4.setAttribute("style", "white-space: nowrap;");
+tr4.appendChild(nr4);
+element.appendChild(tr4);
+
+const tr5 = document.createElement("p");
+const nr5 = document.createTextNode("Percent Reduced ----> " + data4[i].percent+"%");
+tr5.setAttribute("style", "white-space: nowrap;");
+tr5.appendChild(nr5);
+element.appendChild(tr5);
+
+if(data4[i].adjusted != 0){
+    play = "Adjusted";
+    total = data4[i].adjusted;
+} else{
+    play = "";
+    total = data4[i].awarded
+}
+
+const tr6 = document.createElement("p");
+const nr6 = document.createTextNode(play+" Awarded Amount ----> $" + total);
+tr6.setAttribute("style", "white-space: nowrap;");
+tr6.appendChild(nr6);
+element.appendChild(tr6);
+}
+
+
+
+
+
+            }
+        }
+    
+          });
+
+        }
+
+        pop();
+
+
+    </script>
+</body>
+</html>

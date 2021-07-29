@@ -53,9 +53,11 @@ if (this.readyState == 4 & this.status == 200) {
     city.value = resp.contactId.city;
     state.value = resp.contactId.state;
     zip.value = resp.contactId.zip;
+    con = resp.contactId;
 
 }
 };
+
 
 url = "http://localhost:7000/employees/" + cat;
 xhr.open("GET", url, true);
@@ -65,8 +67,8 @@ xhr.send();
 
 
 
-function updateContact() {
 
+function go(){
 
 
     let address = document.getElementById("address").value;
@@ -115,18 +117,15 @@ let contact = {
 //The optional argument in the send() method allows us to provide a body.
 xhttp.send(JSON.stringify(contact));
 
-updateEmployee();
-}
 
-function updateEmployee() {
     let fname = document.getElementById("fname").value;
     let lname = document.getElementById("lname").value;
     let pass = document.getElementById("pass").value;
     let email = document.getElementById("email").value;
 
-    let xhttp = new XMLHttpRequest();
+    let xhttp2 = new XMLHttpRequest();
 
-xhttp.onreadystatechange = function () {
+xhttp2.onreadystatechange = function () {
 
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
@@ -143,19 +142,21 @@ xhttp.onreadystatechange = function () {
 }
 
 let url2 = "http://localhost:7000/employees/" + cat;
-xhttp.open("PUT", url2, true);
+xhttp2.open("PUT", url2, true);
 
-xhttp.setRequestHeader('Content-Type', 'application/json');
+xhttp2.setRequestHeader('Content-Type', 'application/json');
 
 let employee = {
     firstName: fname,
     lastName: lname,
     password: pass,
-    email: email
+    email: email,
+    contactId: contact,
+    managmentId: con
 }
 
 
-xhttp.send(JSON.stringify(employee));
+xhttp2.send(JSON.stringify(employee));
 
 
 }
@@ -174,6 +175,7 @@ xhttp.send(JSON.stringify(employee));
         </div>
             <ul class="nav-links">
                 <li><a href="employee.html">Tuition Reimbursement</a></li>
+                <li><a href="result.html">Pending/Completed</a></li>
                 <li><a href="contact.html">Contact Information</a></li>
                 <li><a href="login.html">Log in</a></li>
             </ul>
@@ -239,7 +241,7 @@ xhttp.send(JSON.stringify(employee));
         </div>
 
         <div class="btn">
-            <input type="submit" onclick="updateContact()" class="sub" value="UPDATE">
+            <input type="submit" onclick="go()" class="sub" value="UPDATE">
         </div>
 
         <p id="success"></p>

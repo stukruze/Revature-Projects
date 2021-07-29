@@ -2,6 +2,7 @@ package com.stuartkruze.app;
 
 import java.util.Calendar;
 
+
 import com.stuartkruze.controllers.ContactController;
 import com.stuartkruze.controllers.EmployeeController;
 import com.stuartkruze.controllers.EventController;
@@ -72,7 +73,7 @@ public class App {
 		ManagementController mc = new ManagementController(ms);
 
 		TrainingRepo tr = new TrainingRepoImpl();
-		TrainingServiceImpl ts = new TrainingServiceImpl(tr);
+		TrainingServiceImpl ts = new TrainingServiceImpl(tr, emr);
 		TrainingController tc = new TrainingController(ts);
 
 		Contact cm1 = new Contact("639 Newark Ave.", "Apt. 3L", "Jersey City", "NJ", "07306", "908-566-7322");
@@ -124,14 +125,14 @@ public class App {
 		gr.addGrading(gr1);
 		Event ev1 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "Rutgers University","cloud computing", "need it", "none", gr1);
 		evr.addEvent(ev1);
-		Training tra1 = new Training(false, false, false, false, false, false, false, 0, "", false, "", ev1, mm2, em2);
+		Training tra1 = new Training("", false, false, false, false, false, false, 0, "", false, "", false, 0, 0, 0, ev1, mm2, em2);
 		tr.addTraining(tra1);
 		
 		Grading gr3 = new Grading();
 		gr.addGrading(gr3);
 		Event ev3 = new Event("University Course", "01/21/21", "01/21/21", 300.00, "NJIT","PHP programming", "want it", "none", gr3);
 		evr.addEvent(ev3);
-		Training tra3 = new Training(false, false, false, false, false, false, false, 0, "", false, "", ev3, mm1, em1);
+		Training tra3 = new Training("", false, false, false, false, false, false, 0, "", false, "", false, 0, 0, 0, ev3, mm1, em3);
 		tr.addTraining(tra3);
 		
 		
@@ -176,6 +177,8 @@ public class App {
 		app.delete("/trainings/:id", tc.deleteTraining);
 		
 		app.get("/trainings2/:employee_id", tc.getTrainingsByEmployeeId);
+		
+		app.get("/compute/:id", tc.computeT);
 
 		int year = Calendar.getInstance().get(Calendar.YEAR);
 		

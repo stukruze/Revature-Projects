@@ -2,6 +2,7 @@ package com.stuartkruze.repositories;
 
 import java.util.List;
 
+
 import com.stuartkruze.models.Training;
 
 public interface TrainingRepo {
@@ -12,4 +13,5 @@ public interface TrainingRepo {
 	public Training updateTraining(Training change);
 	public Training deleteTraining(int id);
 	public List<Training> getTrainingsByEmployeeId(int employee_id);
+	public Training addResult(Training r);
 }
