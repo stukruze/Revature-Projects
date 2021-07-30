@@ -168,7 +168,7 @@ xhttp.send(JSON.stringify(training));
         </div>
             <ul class="nav-links">
                 <li><a href="employee.html">Tuition Reimbursement</a></li>
-                <li><a href="result.html">Pending/Completed</a></li>
+                <li><a href="result.html" id="pending">Pending/Completed</a></li>
                 <li><a href="contact.html">Contact Information</a></li>
                 <li><a href="login.html">Login</a></li>
                 
@@ -224,7 +224,7 @@ xhttp.send(JSON.stringify(training));
             <div class="input_field">
             <label for="types">Choose the type of Training</label>
             <select name="types" id="types">
-              <option value="University Course">University Course</option>
+              <option id="univ" value="University Course">University Course</option>
               <option value="Seminars">Seminars</option>
               <option value="Certification Preparation Class">Certification Preparation Class</option>
               <option value="Certification">Certification</option>
@@ -243,7 +243,7 @@ xhttp.send(JSON.stringify(training));
             </div>
 
             <div class="btn">
-                <input type="submit" onclick="addTraining()" class="sub" value="ADD EVENT">
+                <input type="submit" id="sub" onclick="addTraining()" class="sub" value="ADD EVENT">
             </div>
     
             <p id="success"></p>
