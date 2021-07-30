@@ -1,6 +1,7 @@
 package com.stuartkruze.models;
 
-import javax.persistence.CascadeType;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,7 +34,7 @@ public class Employee {
 	private String email;
 	
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="contact_id")
 	private Contact contactId;
 	
