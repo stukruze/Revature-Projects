@@ -53,4 +53,4 @@ This was a solo project by Stuart Kruze
 
 ## License
 
-This project uses the following license: LICENSE.md
+This project uses the following license: LICENSE.md https://github.com/stukruze/Revature-Projects/blob/main/LICENSE
